@@ -6,7 +6,12 @@ Directories are as follows:
            ---canvas.html     file used as a template to skip the basic html element layout/creation 
            ---index.html
                   |
-                  |---- HTML Tutorial/      folder for html tutorial files: files named by lesson number
-                  |---- CSS Tutorial/       folder for css tutorial files: files named by lesson number
-                  |---- JS Tutorial/        folder for js tutorial files: files named by lesson number
-                  ----- stylesheets/        foler for general stylesheets used throughout the development
+                  |---- HTML Tutorial/      
+                  |         |---- pages/    folder for html tutorial files: files named by lesson number
+                  |---- CSS Tutorial/       
+                  |         |---- pages/    folder for css tutorial files:  files named by lesson number
+                  |---- JS Tutorial/        
+                  |         |---- pages/    folder for js tutorial files:   files named by lesson number
+                  |
+                  |----- stylesheets/       folder for general stylesheets used throughout the development
+                  |         |---- navbars   stylesheet for navigation bar styles

@@ -1,0 +1,31 @@
+.previousNext {
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.nextOnly {
+    display: flex;
+    flex-direction:row;
+    align-content: flex-end;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.previousOnly {
+    display: flex;
+    flex-direction: row;
+    align-content: flex-start;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.nextButton {
+    background-color: aquamarine;
+}
+
+.previousButton {
+    background-color: aquamarine;
+}

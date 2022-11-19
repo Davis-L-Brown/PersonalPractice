@@ -9,6 +9,11 @@
     margin: 20px;
 }
 
+.navLogo {
+    height: 50px;
+    width: 90px;
+}
+
 .navBarLink1 {
     color: green;
     margin: 15px;

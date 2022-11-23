@@ -17,6 +17,7 @@
 }
 
 .navBarLink1 {
+    display: inline-block;
     color: white;
     text-decoration: none;
     font-family: "sans-serif", "Lucida Bright";

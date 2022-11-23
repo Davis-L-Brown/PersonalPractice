@@ -4,5 +4,6 @@
 }
 
 body {
+    min-width: fit-content;
     background-color: lightgray;
 }

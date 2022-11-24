@@ -7,3 +7,14 @@ body {
     min-width: fit-content;
     background-color: lightgray;
 }
+
+.bodyMain {
+    display: flex;
+    flex-direction: row;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    margin: 0px 20px 0px 20px;
+}

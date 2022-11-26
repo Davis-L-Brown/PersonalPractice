@@ -28,17 +28,23 @@
     background-color: lightgray;
 }
 
-.sideNavBar {
-    display:flex;
-    flex-direction: column;
-    height: 100%;
-    background-color: rgb(138,138,138);
-    padding: 10px 20px 10px 20px;
+.leftSideContent ul {
+    list-style:none;
+    padding: 10px;
 }
 
-.sideNavBarLink {
+.leftSideContent ul:visited {
+    content: "\2713\0020";
+}
+
+.leftSideContent ul li {
+    padding: 10px 10px 10px 10px;
+}
+
+.leftSideContent ul a {
     color: black;
     text-decoration: none;
     font-family: sans-serif, "Lucida Bright";
-    padding: 10px;
+    
 }
+

@@ -8,13 +8,42 @@ body {
     background-color: lightgray;
 }
 
+/* used as a container to hold all of the div elements
+ * on the main page including the main text, side nav, aside elements
+ *
+ * A 'body' for the body
+ */
 .bodyMain {
+    min-height: 100vh;
     display: flex;
     flex-direction: row;
 }
 
+.leftSideContent {
+    display: flex;
+    flex-direction: column;
+    min-width: 14vw;
+    background-color: rgb(138,138,138);
+}
+
+/* The main content of the body
+ * Holds the juice of the currently visited page
+ */
 .main {
     display: flex;
     flex-direction: column;
     margin: 0px 20px 0px 20px;
+    min-width: 60vw;
+}
+
+.main h1 {
+    padding: 20px;
+    text-align: center;
+}
+
+.rightSideContent {
+    display: flex;
+    flex-direction: column;
+    min-width: 14.6vw; 
+    background-color: rgb(138,138,138);
 }

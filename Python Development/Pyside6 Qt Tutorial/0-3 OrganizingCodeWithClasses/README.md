@@ -6,3 +6,4 @@ version1 creates everything in a sequential order
 version2 utilizes a type to create a window, and the main program creates an 
 	instance of the type.
 version3 utilizes a type to create a window, but makes the type its own file and
+	calls this class from the main sequence.

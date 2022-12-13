@@ -4,8 +4,8 @@ from PySide6.QtCore import Qt
 from PySide6.QtWidgets import QApplication, QPushButton, QSlider
 
 # the slot : respons when something happens
-def button_clicked(data):
-    print("You clicked the button : ", data)
+#def button_clicked(data):
+#    print("You clicked the button : ", data)
 
 def respond_to_slider(data):
     print("Slider moved to ", data)

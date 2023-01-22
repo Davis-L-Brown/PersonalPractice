@@ -1,7 +1,7 @@
 HH:mm
-00:47
-signals and slots:
-	mechanism provided by Qt used to connect objects to events.
-	think event handler.
-	when something happens, do something.
-	eg: on a button push, print some code.
+01:04
+Qt Widgets are the basic components used to build UIs.
+	eg: buttons lines edits
+fundamental in building interfaces.
+Gives you a base window to put all other things over.
+	- similar to a div in html

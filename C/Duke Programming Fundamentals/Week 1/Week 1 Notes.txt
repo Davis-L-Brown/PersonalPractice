@@ -72,4 +72,4 @@ Step 3 Generalizing Your Steps
 	- 
 
 Step 4 Test your Algorithm
-	  
+	- Need to test the changes you made!

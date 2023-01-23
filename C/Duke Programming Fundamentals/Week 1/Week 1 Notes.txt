@@ -1,0 +1,75 @@
+Plan First, Then Code
+
+	- novices attempt to dive right into programming in the language (cowboy coding)
+	- First step should be planning, writing code should follow
+	- EG you wouldn't build a house without a blueprint that has been verified
+	  by all required parties
+
+Overview of the Seven Steps
+
+	- Steps 1-4: Devise Alogrithm
+		1 - Work an instance yourself
+		2 - Write down exactly what you just did
+		3 - Generalize your steps from (2)
+		4 - Test your steps 
+	- Step 5: Translate to code
+	- Step 6: Test Program
+
+	- Step 7: Debug Program
+		-- Often after testing the program, there will be issues in your design
+		   or bugs in your code.
+		-- These issues will send you back to either step 1-4 (if your design is
+		   wrong) or step 5 (if your code is wrong)
+
+Algorithms
+	
+	- An algorith is a clear set of steps to solve any probblem 
+
+Stepping Through an Algorithm
+
+	- Briefly take a look at an algorithm and how one might follow its steps: 
+	  Given a non negative integer N: 
+		make a variable called x, set it equal to (N + 2)
+		Count from 0 to N (include both ends), call each number i
+			Write down the value of (x * i)
+			Update x to be equal to (x + i *  N)
+		when you finish counting, write down the value of x
+
+			N = 2
+			x = N + 2 + 2 + 2 = 4
+			i = 0 --> x * i = 4 * 0 = 0
+				x = x + i * N = 4 + 0 * 2 = 4
+			i = 1 --> x * i = 4 * 1 = 4
+				x = x + i * N = 4 + 1 * 2 = 6
+			i = 2 --> x * i = 6 * 2 = 12
+				x = x + i * N = 6 + 2 * 2 = 10
+
+			Output : 0 4 12 10
+
+Seven Steps: 
+Step 1 Work an Example by Yourself
+	
+	- The first step in designing an algorithm is to work at least one instance of
+	  the problem by hand eg: prime number calculator - pick a prime number, and 
+	  write down the steps to determine if it is a prime number. Repeat with a non
+	  prime number to ensure that non prime numbers don't work with the implementation
+	- 2 common dificulties when working the problem:
+		1. Ill specified problem - problem statement is not clear enough to determine
+								   what needs to be done
+		2. Lack of Domain Knowledge - programmer lacks the background knowledge required
+								   to complete an algorithm. Eg: doesn't know what a 
+								   prime number is
+
+Step 2 Write Down What You Just Did
+
+	- Think about what you did to solve the problem
+	- write down the steps to solve that particular instance
+		-- Instructions should be detailed and should not miss small details
+
+Step 3 Generalizing Your Steps
+
+	- Take particular steps used and replace the instances with generalized patterns
+	- 
+
+Step 4 Test your Algorithm
+	  

@@ -1,0 +1,27 @@
+/*
+ * Notes regarding various data types 
+ */
+#include <stdio.h>
+
+int main() {
+
+	printf("In life we encounter various types of data.\n");
+	printf("We encounter data as numbers: 8, 9, 0... etc\n");
+	printf("\t\tcharacters: a, b, c, 4, *, etc...\n");
+	printf("\t\tstrings: \'I went to the store today\'\n");
+
+	printf("Integers are either signed (positive or negative) or unsigned.\n");
+	printf("Signed integers are represented in different forms of data:\n");
+	printf("\tchar:          Memory Size: 1, range: -128 to 127 (ASCII)\n");
+	printf("\tshort int:     Memory Size: 2, range: -32,768 to 32,767   AKA short\n");
+	printf("\tint:           Memory Size: 4, range: -2,147,483,648 to 2,147,483,647\n");
+	printf("\tlong int:      Memory Size: 8, AKA long\n");
+	printf("\tlong long int: Memory Size: 8, AKA long long\n");
+	printf("Unsigned integers are also represented in different forms, just denoted unsigned.\n");
+	printf("eg: unsigned char, unsigned int, unsigned long\n");
+	printf("unsigned integers utilize the same amount of memory as signed integers, but utilize different ranges.\n");
+	printf("\tunsigned char: Memory Size: 1, range: 0 to 255 (ASCII)\n");
+	printf("\tunsigned int:  Memory Size: 2, range: 0 to 65,535\n");
+
+	return 0;
+}

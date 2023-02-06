@@ -23,5 +23,9 @@ int main() {
 	printf("\tunsigned char: Memory Size: 1, range: 0 to 255 (ASCII)\n");
 	printf("\tunsigned int:  Memory Size: 2, range: 0 to 65,535\n");
 
+	printf("\n\nAside from chars, shorts and long longs, the C Standard does not fix the storage sizes of data types. It only sets the maximum and minimum.\n");
+	printf("The size is decided by the compiler a programmer uses. Refer to your compiler's manual for data type sizes.\n");
+	printf("\tshorts are always 2 bytes\n\tchars are always 1 byte\n\tlong long is always 8 bytes.\n");
+
 	return 0;
 }

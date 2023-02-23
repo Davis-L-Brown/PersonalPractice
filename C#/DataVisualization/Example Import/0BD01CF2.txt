@@ -1,0 +1,18 @@
+Generated_RichData_ResultFile
+identifierCode:0BD01CF2
+identifierCode2:
+partNumber:123-1234-123
+asset:ASSET-44444
+operationId:57
+opEndTime:2023-01-01T01:01:01.01
+passFail:true
+metadataId:14666666666666666
+location:QC
+line:QC
+opstarttime:01/01/2023 01:01:01.01
+opendtime:01/01/2023 01:01:01.01
+
+ FIXTURE_IN_PLACE	True	True True
+ LID_STATE	True	True	True
+ TESTER_DOOR_INITIAL_STATE	False False False
+ CLEAR_AIR_RAW_READING	-200	-89.4	200

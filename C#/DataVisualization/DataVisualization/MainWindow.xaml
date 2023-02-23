@@ -1,0 +1,23 @@
+﻿<Window x:Class="DataVisualization.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DataVisualization"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Menu HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="800" Grid.Column="2">
+            <MenuItem Header="_File"></MenuItem>
+            <MenuItem Header="_Help"></MenuItem>
+        </Menu>
+        <TextBox Name="tbSerialNumber" HorizontalAlignment="Left" Height="21" Margin="10,34,0,0" TextWrapping="Wrap" Text="Serial Number" VerticalAlignment="Top" Width="115"/>
+        <TextBox Name="tbOpId" HorizontalAlignment="Left" Height="21" Margin="130,34,0,0" TextWrapping="Wrap" Text="OpID" VerticalAlignment="Top" Width="50"/>
+        <TextBox Name="tbAssetID" HorizontalAlignment="Left" Height="21" Margin="185,34,0,0" TextWrapping="Wrap" Text="m-it001-25252" VerticalAlignment="Top" Width="90"/>
+        <DatePicker Name="dpStartDate" HorizontalAlignment="Left" Height="24" Margin="10,60,0,0" VerticalAlignment="Top" Width="115"/>
+        <DatePicker Name="dpEndDate" HorizontalAlignment="Left" Height="24" Margin="130,60,0,0" VerticalAlignment="Top" Width="115"/>
+        <Button Name="btnSearch" Content="Search" HorizontalAlignment="Left" Height="20" Margin="10,90,0,0" VerticalAlignment="Top" Width="60"/>
+        <Button Name="btnExport" Content="Export" HorizontalAlignment="Left" Height="20" Margin="75,90,0,0" VerticalAlignment="Top" Width="60"/>
+
+    </Grid>
+</Window>

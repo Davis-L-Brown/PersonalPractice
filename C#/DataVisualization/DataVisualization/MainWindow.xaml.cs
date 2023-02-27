@@ -20,9 +20,30 @@ namespace DataVisualization
     /// </summary>
     public partial class MainWindow : Window
     {
+        private int[] fakeXresults
+        {
+            get
+            {
+                return Enumerable.Range(0, 10).ToArray();
+            }
+        }
+
+        private int[] fakeYresults
+        {
+            get
+            {
+                return Enumerable.Range(0, 10).ToArray();
+            }
+        }
+
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void btnSearch_Click(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine("{0}", fakeXresults);
         }
     }
 }

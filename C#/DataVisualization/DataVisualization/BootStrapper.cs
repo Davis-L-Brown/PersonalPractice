@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 using System.Windows;
 using SimpleInjector;
 using DataVisualization;
+using System.Windows.Forms.DataVisualization.Charting;
 
-static class Program
+static class BootStrapper
 {
     /// <summary>
     /// 
@@ -30,10 +31,11 @@ static class Program
         // Register your types, for instance:
         //container.Register<IQueryProcessor, QueryProcessor>(Lifestyle.Singleton);
         //container.Register<IUserContext, WpfUserContext>();
-
+        Chart dataChart = new Chart();
+        container.RegisterInstance(typeof(Chart), dataChart);
         // Register your windows and view models:
         container.Register<MainWindow>();
-        //container.Register<MainWindowViewModel>();
+
 
         container.Verify();
 

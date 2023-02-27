@@ -16,7 +16,7 @@
         <TextBox Name="tbAssetID" HorizontalAlignment="Left" Height="21" Margin="185,34,0,0" TextWrapping="Wrap" Text="Asset ID" VerticalAlignment="Top" Width="90"/>
         <DatePicker Name="dpStartDate" HorizontalAlignment="Left" Height="24" Margin="10,60,0,0" VerticalAlignment="Top" Width="115" Background="#FFF5DDDD"/>
         <DatePicker Name="dpEndDate" HorizontalAlignment="Left" Height="24" Margin="130,60,0,0" VerticalAlignment="Top" Width="115" Background="#FFF5DDDD"/>
-        <Button Name="btnSearch" Content="Search" HorizontalAlignment="Left" Height="20" Margin="10,90,0,0" VerticalAlignment="Top" Width="60"/>
+        <Button Name="btnSearch" Content="Search" HorizontalAlignment="Left" Height="20" Margin="10,90,0,0" VerticalAlignment="Top" Width="60" Click="btnSearch_Click"/>
         <Button Name="btnExport" Content="Export" HorizontalAlignment="Left" Height="20" Margin="75,90,0,0" VerticalAlignment="Top" Width="60"/>
 
     </Grid>

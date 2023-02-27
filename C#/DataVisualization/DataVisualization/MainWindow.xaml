@@ -7,17 +7,28 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Menu HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="800" Grid.Column="2">
+        <Grid.ColumnDefinitions></Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="9.5*"/>
+        </Grid.RowDefinitions>
+        <Menu HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="800">
             <MenuItem Header="_File"></MenuItem>
             <MenuItem Header="_Help"></MenuItem>
         </Menu>
-        <TextBox Name="tbSerialNumber" HorizontalAlignment="Left" Height="21" Margin="10,34,0,0" TextWrapping="Wrap" Text="Serial Number" VerticalAlignment="Top" Width="115"/>
-        <TextBox Name="tbOpId" HorizontalAlignment="Left" Height="21" Margin="130,34,0,0" TextWrapping="Wrap" Text="OpID" VerticalAlignment="Top" Width="50"/>
-        <TextBox Name="tbAssetID" HorizontalAlignment="Left" Height="21" Margin="185,34,0,0" TextWrapping="Wrap" Text="Asset ID" VerticalAlignment="Top" Width="90"/>
-        <DatePicker Name="dpStartDate" HorizontalAlignment="Left" Height="24" Margin="10,60,0,0" VerticalAlignment="Top" Width="115" Background="#FFF5DDDD"/>
-        <DatePicker Name="dpEndDate" HorizontalAlignment="Left" Height="24" Margin="130,60,0,0" VerticalAlignment="Top" Width="115" Background="#FFF5DDDD"/>
-        <Button Name="btnSearch" Content="Search" HorizontalAlignment="Left" Height="20" Margin="10,90,0,0" VerticalAlignment="Top" Width="60" Click="btnSearch_Click"/>
-        <Button Name="btnExport" Content="Export" HorizontalAlignment="Left" Height="20" Margin="75,90,0,0" VerticalAlignment="Top" Width="60"/>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3.5*"/>
+                    <ColumnDefinition Width="6.5*"/>
+                </Grid.ColumnDefinitions>
 
+                <TextBox    Name="tbSerialNumber"   Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" Height="21" Margin="10,34,0,0"  VerticalAlignment="Top" Width="115" TextWrapping="Wrap" Text="Serial Number"/>
+                <TextBox    Name="tbOpId"           Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" Height="21" Margin="130,34,0,0" VerticalAlignment="Top" Width="50"  TextWrapping="Wrap" Text="OpID"  />
+                <TextBox    Name="tbAssetID"        Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" Height="21" Margin="185,34,0,0" VerticalAlignment="Top" Width="90"  TextWrapping="Wrap" Text="Asset ID"  />
+                <DatePicker Name="dpStartDate"      Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" Height="24" Margin="10,60,0,0"  VerticalAlignment="Top" Width="115" Background="#FFF5DDDD"/>
+                <DatePicker Name="dpEndDate"        Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" Height="24" Margin="130,60,0,0" VerticalAlignment="Top" Width="115" Background="#FFF5DDDD"/>
+                <Button     Name="btnSearch"        Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" Height="20" Margin="10,90,0,0"  VerticalAlignment="Top" Width="60"  Content="Search" Click="btnSearch_Click"/>
+                <Button     Name="btnExport"        Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" Height="20" Margin="75,90,0,0"  VerticalAlignment="Top" Width="60"  Content="Export"  />
+            </Grid>
     </Grid>
 </Window>

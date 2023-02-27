@@ -39,11 +39,13 @@ namespace DataVisualization
 
         public MainWindow(Chart dataChart)
         {
+            Chart _dataChart = dataChart;
             InitializeComponent();
         }
 
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
+
             Console.WriteLine("{0}", fakeXresults);
         }
     }

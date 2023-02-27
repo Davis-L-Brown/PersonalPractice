@@ -8,7 +8,7 @@ using SimpleInjector;
 using DataVisualization;
 using System.Windows.Forms.DataVisualization.Charting;
 
-static class BootStrapper
+static class Program
 {
     /// <summary>
     /// 

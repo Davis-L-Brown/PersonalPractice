@@ -29,6 +29,9 @@
                 <DatePicker Name="dpEndDate"        Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" Height="24" Margin="130,60,0,0" VerticalAlignment="Top" Width="115" Background="#FFF5DDDD"/>
                 <Button     Name="btnSearch"        Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" Height="20" Margin="10,90,0,0"  VerticalAlignment="Top" Width="60"  Content="Search" Click="btnSearch_Click"/>
                 <Button     Name="btnExport"        Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" Height="20" Margin="75,90,0,0"  VerticalAlignment="Top" Width="60"  Content="Export"  />
+            
+                <!--Adding graph-->
+            <DockPanel></DockPanel>
             </Grid>
     </Grid>
 </Window>

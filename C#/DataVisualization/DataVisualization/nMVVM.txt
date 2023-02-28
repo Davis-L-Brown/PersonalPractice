@@ -1,0 +1,21 @@
+MVVM Architetural Patter
+MVVM -> Model View ViewModel
+Consists of three moving parts
+	1. Model - business objects that encapsulate the data and behaviour of application domain
+	2. View - what the user sees
+	3. ViewModel - model designed for the view. A class with properties that represent the state of the view
+					and methods that implement the logic behind the view
+	EG a page with a list and a button
+		--------------------
+		|	Add				|		When the user clicks a button an item is added to the list
+		|					|
+		| Item1				|
+		| Item2				|
+		| ...				|
+		---------------------
+
+		To create a view model for this view we need a class with:
+			a property like items.
+				Items - an observable collection: represents the state of the view
+			a method like Add()
+				Add() - called when we click the btnAdd

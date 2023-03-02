@@ -32,17 +32,22 @@ namespace DataVisualization
             }
         }
 
-        private int[] fakeYresults
+        private double[] fakeYresults
         {
             get
             {
-                return Enumerable.Range(0, 10).ToArray();
+                int[] results = Enumerable.Range(0, 4).ToArray();
+                for (int i=0; i < results.Length; i++)
+                {
+                    fakeYresults[i] = (int)(double)results[i];
+                }
+                return fakeYresults;
             }
         }
 
         public SeriesCollection SeriesCollection { get; set; }
 
-        public string[] BarLabels { get; set; }
+        public string[] Labels { get; set; }
 
         public Func<double, string> Formatter { get; set; }
 
@@ -66,15 +71,26 @@ namespace DataVisualization
                 Values = new ChartValues<double> { 10, 15, 20, 25 }
             });
 
-            BarLabels = new[] { "Values 1", "values 2", "values 3", "values 4" };
-            Formatter = value => value.ToString("N");
+            SeriesCollection.Add(new LineSeries
+            {
+                Title = "FakeXResults",
+                Values = new ChartValues<double> { 1, 2, 3, 4 }
+            });
+
+            Labels = new[] { "Jan", "Feb", "Mar", "Apr" };
+            Formatter = value => value.ToString("C");
             DataContext = this;
         }
 
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
-
-            Console.WriteLine("{0}", fakeXresults);
+            /// research how to add to a c# dictionary
+            double[] generatedResults = fakeYresults;
+            SeriesCollection.Add(new LineSeries
+            {
+                Title = "RandomResults",
+                Values = new ChartValues<double> { }
+            });
         }
     }
 }

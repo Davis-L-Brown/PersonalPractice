@@ -7,12 +7,14 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
-using System.Windows.Forms.DataVisualization.Charting;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+
+using LiveCharts;
+using LiveCharts.Wpf;
 
 namespace DataVisualization
 {
@@ -21,6 +23,7 @@ namespace DataVisualization
     /// </summary>
     public partial class MainWindow : Window
     {
+        
         private int[] fakeXresults
         {
             get
@@ -37,10 +40,35 @@ namespace DataVisualization
             }
         }
 
-        public MainWindow(Chart dataChart)
+        public SeriesCollection SeriesCollection { get; set; }
+
+        public string[] BarLabels { get; set; }
+
+        public Func<double, string> Formatter { get; set; }
+
+
+        public MainWindow(CartesianChart dataChart)
         {
-            Chart _dataChart = dataChart;
+            CartesianChart _dataChart = dataChart;
             InitializeComponent();
+            SeriesCollection = new SeriesCollection
+            {
+                new ColumnSeries
+                {
+                    Title= "Val1",
+                    Values = new ChartValues<double> { 5, 10, 15, 20 }
+                }
+            };
+
+            SeriesCollection.Add(new ColumnSeries
+            {
+                Title = "val2",
+                Values = new ChartValues<double> { 10, 15, 20, 25 }
+            });
+
+            BarLabels = new[] { "Values 1", "values 2", "values 3", "values 4" };
+            Formatter = value => value.ToString("N");
+            DataContext = this;
         }
 
         private void btnSearch_Click(object sender, RoutedEventArgs e)

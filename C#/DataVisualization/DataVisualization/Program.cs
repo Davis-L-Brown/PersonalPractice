@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using SimpleInjector;
+
 using DataVisualization;
-using System.Windows.Forms.DataVisualization.Charting;
+using LiveCharts;
+using LiveCharts.Wpf;
+using SimpleInjector;
 
 static class Program
 {
@@ -31,8 +33,8 @@ static class Program
         // Register your types, for instance:
         //container.Register<IQueryProcessor, QueryProcessor>(Lifestyle.Singleton);
         //container.Register<IUserContext, WpfUserContext>();
-        Chart dataChart = new Chart();
-        container.RegisterInstance(typeof(Chart), dataChart);
+        CartesianChart dataChart = new CartesianChart();
+        container.RegisterInstance(typeof(CartesianChart), dataChart);
         // Register your windows and view models:
         container.Register<MainWindow>();
 

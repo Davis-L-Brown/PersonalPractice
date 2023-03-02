@@ -3,9 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:dv="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit"       
         xmlns:local="clr-namespace:DataVisualization"
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
         mc:Ignorable="d"
+        d:DesignHeight="450" d:DesignWidth="800" d:DataContext="{d:DesignInstance local:MainWindow}"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions></Grid.ColumnDefinitions>
@@ -17,24 +18,30 @@
             <MenuItem Header="_File"></MenuItem>
             <MenuItem Header="_Help"></MenuItem>
         </Menu>
-            <Grid Grid.Row="2">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="3.5*"/>
-                    <ColumnDefinition Width="6.5*"/>
-                </Grid.ColumnDefinitions>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3.5*"/>
+                <ColumnDefinition Width="6.5*"/>
+            </Grid.ColumnDefinitions>
 
-                <TextBox    Name="tbSerialNumber"   Grid.Column="0"  HorizontalAlignment="Left" Height="21" Margin="10,34,0,0"  VerticalAlignment="Top" Width="115" TextWrapping="Wrap" Text="Serial Number"/>
-                <TextBox    Name="tbOpId"           Grid.Column="0"  HorizontalAlignment="Left" Height="21" Margin="130,34,0,0" VerticalAlignment="Top" Width="50"  TextWrapping="Wrap" Text="OpID"  />
-                <TextBox    Name="tbAssetID"        Grid.Column="0"  HorizontalAlignment="Left" Height="21" Margin="185,34,0,0" VerticalAlignment="Top" Width="90"  TextWrapping="Wrap" Text="Asset ID"  />
-                <DatePicker Name="dpStartDate"      Grid.Column="0"  HorizontalAlignment="Left" Height="24" Margin="10,60,0,0"  VerticalAlignment="Top" Width="115" Background="#FFF5DDDD"/>
-                <DatePicker Name="dpEndDate"        Grid.Column="0"  HorizontalAlignment="Left" Height="24" Margin="130,60,0,0" VerticalAlignment="Top" Width="115" Background="#FFF5DDDD"/>
-                <Button     Name="btnSearch"        Grid.Column="0"  HorizontalAlignment="Left" Height="20" Margin="10,90,0,0"  VerticalAlignment="Top" Width="60"  Content="Search" Click="btnSearch_Click"/>
-                <Button     Name="btnExport"        Grid.Column="0"  HorizontalAlignment="Left" Height="20" Margin="75,90,0,0"  VerticalAlignment="Top" Width="60"  Content="Export"  />
-            
-                <!--Adding graph-->
-                <DockPanel  Name="dpGraph"          Grid.Column="1">
+            <TextBox    Name="tbSerialNumber"   Grid.Column="0"  HorizontalAlignment="Left" Height="21" Margin="10,34,0,0"  VerticalAlignment="Top" Width="115" TextWrapping="Wrap" Text="Serial Number"/>
+            <TextBox    Name="tbOpId"           Grid.Column="0"  HorizontalAlignment="Left" Height="21" Margin="130,34,0,0" VerticalAlignment="Top" Width="50"  TextWrapping="Wrap" Text="OpID"  />
+            <TextBox    Name="tbAssetID"        Grid.Column="0"  HorizontalAlignment="Left" Height="21" Margin="185,34,0,0" VerticalAlignment="Top" Width="90"  TextWrapping="Wrap" Text="Asset ID"  />
+            <DatePicker Name="dpStartDate"      Grid.Column="0"  HorizontalAlignment="Left" Height="24" Margin="10,60,0,0"  VerticalAlignment="Top" Width="115" Background="#FFF5DDDD"/>
+            <DatePicker Name="dpEndDate"        Grid.Column="0"  HorizontalAlignment="Left" Height="24" Margin="130,60,0,0" VerticalAlignment="Top" Width="115" Background="#FFF5DDDD"/>
+            <Button     Name="btnSearch"        Grid.Column="0"  HorizontalAlignment="Left" Height="20" Margin="10,90,0,0"  VerticalAlignment="Top" Width="60"  Content="Search" Click="btnSearch_Click"/>
+            <Button     Name="btnExport"        Grid.Column="0"  HorizontalAlignment="Left" Height="20" Margin="75,90,0,0"  VerticalAlignment="Top" Width="60"  Content="Export"  />
 
-                </DockPanel>
-            </Grid>
+            <!--Adding graph-->
+            <lvc:CartesianChart Series="{Binding SeriesCollection}" Grid.Column="1" HorizontalAlignment="Left"  VerticalAlignment="Top" Margin="60,30,0,0" Height="200" Width="413"
+                                LegendLocation="Right">
+                <lvc:CartesianChart.AxisX>
+                    <lvc:Axis Title="X" Labels="{Binding BarLabels}"></lvc:Axis>
+                </lvc:CartesianChart.AxisX>
+                <lvc:CartesianChart.AxisY>
+                    <lvc:Axis Title="Y" LabelFormatter="{Binding Formatter}"></lvc:Axis>
+                </lvc:CartesianChart.AxisY>
+            </lvc:CartesianChart>
+        </Grid>
     </Grid>
 </Window>

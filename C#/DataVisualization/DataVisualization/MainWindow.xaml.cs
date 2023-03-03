@@ -23,7 +23,9 @@ namespace DataVisualization
     /// </summary>
     public partial class MainWindow : Window
     {
-        
+
+        private static readonly Random rand = new Random();
+
         private int[] fakeXresults
         {
             get
@@ -32,16 +34,23 @@ namespace DataVisualization
             }
         }
 
-        private double[] fakeYresults
+        private List<double> fakeYresults
         {
             get
             {
-                int[] results = Enumerable.Range(0, 4).ToArray();
-                for (int i=0; i < results.Length; i++)
+                List<double> result = new List<double>();
+                //int[] results = Enumerable.Range(0, 4).ToArray();
+                
+                //for (int i=0; i < results.Length; i++)
+                //{
+                //    fakeYresults[i] = (int)(double)results[i];
+                //}
+                for (int i = 0; i < 4; i++)
                 {
-                    fakeYresults[i] = (int)(double)results[i];
+                    result.Add(rand.NextDouble() * 20);
                 }
-                return fakeYresults;
+
+                return result;
             }
         }
 
@@ -85,11 +94,12 @@ namespace DataVisualization
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
             /// research how to add to a c# dictionary
-            double[] generatedResults = fakeYresults;
+            /// double[] generatedResults = fakeYresults;
+            List<double> generatedResults = fakeYresults;
             SeriesCollection.Add(new LineSeries
             {
                 Title = "RandomResults",
-                Values = new ChartValues<double> { }
+                Values = new ChartValues<double>(generatedResults)
             });
         }
     }

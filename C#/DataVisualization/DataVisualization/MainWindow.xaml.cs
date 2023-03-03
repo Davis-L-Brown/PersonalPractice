@@ -26,6 +26,8 @@ namespace DataVisualization
 
         private static readonly Random rand = new Random();
 
+        ///private CartesianChart _dataChart { get; set; }
+        
         private int[] fakeXresults
         {
             get
@@ -33,6 +35,10 @@ namespace DataVisualization
                 return Enumerable.Range(0, 10).ToArray();
             }
         }
+
+        public SeriesCollection _seriesCollection { get; set; }
+
+        private ColumnSeries _series { get; set; }
 
         private List<double> fakeYresults
         {
@@ -53,38 +59,17 @@ namespace DataVisualization
                 return result;
             }
         }
-
-        public SeriesCollection SeriesCollection { get; set; }
-
+        
         public string[] Labels { get; set; }
 
         public Func<double, string> Formatter { get; set; }
 
-
-        public MainWindow(CartesianChart dataChart)
+        public MainWindow(CartesianChart dataChart, SeriesCollection sCollection, ColumnSeries cSeries)
         {
-            CartesianChart _dataChart = dataChart;
+            //_dataChart = dataChart;
+            _seriesCollection = sCollection;
+            _series = cSeries;
             InitializeComponent();
-            SeriesCollection = new SeriesCollection
-            {
-                new ColumnSeries
-                {
-                    Title= "Val1",
-                    Values = new ChartValues<double> { 5, 10, 15, 20 }
-                }
-            };
-
-            SeriesCollection.Add(new ColumnSeries
-            {
-                Title = "val2",
-                Values = new ChartValues<double> { 10, 15, 20, 25 }
-            });
-
-            SeriesCollection.Add(new LineSeries
-            {
-                Title = "FakeXResults",
-                Values = new ChartValues<double> { 1, 2, 3, 4 }
-            });
 
             Labels = new[] { "Jan", "Feb", "Mar", "Apr" };
             Formatter = value => value.ToString("C");
@@ -96,7 +81,7 @@ namespace DataVisualization
             /// research how to add to a c# dictionary
             /// double[] generatedResults = fakeYresults;
             List<double> generatedResults = fakeYresults;
-            SeriesCollection.Add(new LineSeries
+            _seriesCollection.Add(new LineSeries
             {
                 Title = "RandomResults",
                 Values = new ChartValues<double>(generatedResults)

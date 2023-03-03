@@ -7,7 +7,7 @@
         xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
         mc:Ignorable="d"
         d:DesignHeight="450" d:DesignWidth="800" d:DataContext="{d:DesignInstance local:MainWindow}"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Background="#FF908585">
     <Grid>
         <Grid.ColumnDefinitions></Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -24,16 +24,17 @@
                 <ColumnDefinition Width="6.5*"/>
             </Grid.ColumnDefinitions>
 
-            <TextBox    Name="tbSerialNumber"   Grid.Column="0"  HorizontalAlignment="Left" Height="21" Margin="10,34,0,0"  VerticalAlignment="Top" Width="115" TextWrapping="Wrap" Text="Serial Number"/>
-            <TextBox    Name="tbOpId"           Grid.Column="0"  HorizontalAlignment="Left" Height="21" Margin="130,34,0,0" VerticalAlignment="Top" Width="50"  TextWrapping="Wrap" Text="OpID"  />
-            <TextBox    Name="tbAssetID"        Grid.Column="0"  HorizontalAlignment="Left" Height="21" Margin="185,34,0,0" VerticalAlignment="Top" Width="90"  TextWrapping="Wrap" Text="Asset ID"  />
-            <DatePicker Name="dpStartDate"      Grid.Column="0"  HorizontalAlignment="Left" Height="24" Margin="10,60,0,0"  VerticalAlignment="Top" Width="115" Background="#FFF5DDDD"/>
-            <DatePicker Name="dpEndDate"        Grid.Column="0"  HorizontalAlignment="Left" Height="24" Margin="130,60,0,0" VerticalAlignment="Top" Width="115" Background="#FFF5DDDD"/>
-            <Button     Name="btnSearch"        Grid.Column="0"  HorizontalAlignment="Left" Height="20" Margin="10,90,0,0"  VerticalAlignment="Top" Width="60"  Content="Search" Click="btnSearch_Click"/>
-            <Button     Name="btnExport"        Grid.Column="0"  HorizontalAlignment="Left" Height="20" Margin="75,90,0,0"  VerticalAlignment="Top" Width="60"  Content="Export"  />
-
+            <TextBox    Name="tbSerialNumber"   Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,34,0,0"  Height="21"  Width="115" TextWrapping="Wrap" Text="Serial Number"/>
+            <TextBox    Name="tbOpId"           Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,34,0,0" Height="21"  Width="50"  TextWrapping="Wrap" Text="OpID"  />
+            <TextBox    Name="tbAssetID"        Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="185,34,0,0" Height="21"  Width="90"  TextWrapping="Wrap" Text="Asset ID"  />
+            <DatePicker Name="dpStartDate"      Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,60,0,0"  Height="24"  Width="115" Background="#FFF5DDDD"/>
+            <DatePicker Name="dpEndDate"        Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,60,0,0" Height="24"  Width="115" Background="#FFF5DDDD"/>
+            <Button     Name="btnSearch"        Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,90,0,0"  Height="20"  Width="60"  Content="Search" Click="btnSearch_Click"/>
+            <Button     Name="btnExport"        Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,90,0,0"  Height="20"  Width="60"  Content="Export"  />
+            <!--Grid.column="1"-->
+            <ComboBox   Name="cbDataSet"        Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="95,50,0,0"  Width="120"/>
             <!--Adding graph-->
-            <lvc:CartesianChart Series="{Binding SeriesCollection}" Grid.Column="1" HorizontalAlignment="Left"  VerticalAlignment="Top" Margin="60,30,0,0" Height="200" Width="413"
+            <lvc:CartesianChart Series="{Binding _seriesCollection}" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="60,100,0,0" Height="200" Width="413"
                                 LegendLocation="Right">
                 <lvc:CartesianChart.AxisX>
                     <lvc:Axis Title="X" Labels="{Binding Labels}"></lvc:Axis>

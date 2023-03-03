@@ -34,7 +34,13 @@ static class Program
         //container.Register<IQueryProcessor, QueryProcessor>(Lifestyle.Singleton);
         //container.Register<IUserContext, WpfUserContext>();
         CartesianChart dataChart = new CartesianChart();
+        
         container.RegisterInstance(typeof(CartesianChart), dataChart);
+        SeriesCollection sCollection = new SeriesCollection();
+        container.RegisterInstance(typeof(SeriesCollection), sCollection);
+        ColumnSeries cSeries = new ColumnSeries();
+        container.RegisterInstance(typeof(ColumnSeries), cSeries);
+
         // Register your windows and view models:
         container.Register<MainWindow>();
 

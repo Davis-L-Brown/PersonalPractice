@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace RichDataClient.Interfaces
 {
-    internal interface RichDataClient
+    public interface IRichDataClient
     {
+
+        //public IEnumerable<Dictionary<string, string>> GetData(DateTime startDate, DateTime endDate, 
+        //                                                        string asset, 
+        //                                                        string partNumber, 
+        //                                                        string serialNumber);
+
     }
 }

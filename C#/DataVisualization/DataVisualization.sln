@@ -4,8 +4,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.5.33414.496
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataVisualization", "DataVisualization\DataVisualization.csproj", "{F59EC67B-807F-4DB4-B821-D7FAA370594F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C3F1E584-DA21-4878-8EDA-9A87822E5BDC} = {C3F1E584-DA21-4878-8EDA-9A87822E5BDC}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RichDataClient", "RichDataClient\RichDataClient.csproj", "{C3F1E584-DA21-4878-8EDA-9A87822E5BDC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RichDataClient", "RichDataClient\RichDataClient.csproj", "{C3F1E584-DA21-4878-8EDA-9A87822E5BDC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -6,7 +6,32 @@
         xmlns:local="clr-namespace:WPF_Tutorial.Forms"
         mc:Ignorable="d"
         Title="Tutorial5" Height="450" Width="800">
-    <Grid>
-        
+    <Grid Margin="0,0,0,1">
+        <Grid.RowDefinitions>
+            <!--Can add tons of rows and it will create multiple rows-->
+            <RowDefinition/>
+            <!--can define the height of rows/columns using static height,
+                This row will always be 70 pixels.-->
+            <RowDefinition Height="70"/>
+            <!-- using a height="2*" makes a height dynamic/resizing,
+                when undefined, defaults to 1*, which will break everything
+                up evenly. 2* will make it two times everything with 1* -->
+            <RowDefinition Height="2*"/> <!--this row is two times row 0-->
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <!--It is easiest to add dynamic sizes up to 1, or 10, or 100 (think of it in percentages)-->
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="6*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+        <!--without defining the row/column, the two 
+        rectangles default to row 0 column 0 and overlap 
+        and the last defined element shows (blue rectangle)-->
+        <Rectangle Fill="Red"/>
+        <Rectangle Fill="Blue"/>
+        <!-- If you define the rectangles you can get the desired layout-->
+        <Rectangle Grid.Column="1" Fill="Green"/>
+        <Rectangle Grid.Row="1" Grid.Column="1" Fill="Purple"/>
     </Grid>
 </Window>

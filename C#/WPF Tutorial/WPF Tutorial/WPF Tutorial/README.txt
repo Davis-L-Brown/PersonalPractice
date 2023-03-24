@@ -16,3 +16,13 @@ Tutorial 4 - code behind tutorial
 	- ways to do this: 
 		1. Data Binding
 		2. Control access via name 
+
+Tutorial 5 - Basics of Grid Layouts
+	- focusing on ui layouts and grid control
+	- grid is the default control added to the window.
+	- window can only have one thing set as the main content
+		-> this means that everything has to go into one main item
+		-> there is normally one overall grid, and everything goes inside of it.
+		-> EG can't have zero grids and multiple textboxes, but can have one grid 
+		   with 100 textboxes inside of it.
+	- most formatting would be done in an external file to make styling modular (similar to a css file)

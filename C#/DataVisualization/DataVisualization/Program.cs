@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Windows;
 
 using DataVisualization;
+using RichDataClient.Clients;
+using RichDataClient.Interfaces;
 using LiveCharts;
 using LiveCharts.Wpf;
 using SimpleInjector;
@@ -33,8 +35,10 @@ static class Program
         // Register your types, for instance:
         //container.Register<IQueryProcessor, QueryProcessor>(Lifestyle.Singleton);
         //container.Register<IUserContext, WpfUserContext>();
+
+        container.Register<IRichDataClient, cRichDataClient>(Lifestyle.Singleton);
+
         CartesianChart dataChart = new CartesianChart();
-        
         container.RegisterInstance(typeof(CartesianChart), dataChart);
         SeriesCollection sCollection = new SeriesCollection();
         container.RegisterInstance(typeof(SeriesCollection), sCollection);

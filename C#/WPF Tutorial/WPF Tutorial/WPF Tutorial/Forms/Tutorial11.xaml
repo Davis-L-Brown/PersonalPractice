@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_Tutorial.Forms"
         mc:Ignorable="d"
-        Title="Folder Browser Dialog" Height="450" Width="800">
+        Title="Folder Browser Dialog" Height="150" Width="250">
     <Grid>
-        
+        <Button Name="btnFire" Content="Fire" Width="100" Height="40" Click="btnFire_Click"/>
     </Grid>
 </Window>

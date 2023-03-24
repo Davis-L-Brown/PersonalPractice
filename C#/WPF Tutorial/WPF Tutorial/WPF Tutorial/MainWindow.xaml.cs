@@ -82,6 +82,12 @@ namespace WPF_Tutorial
             tutorial11Window.Show();
         }
         
+        private void miTutorial12_Click(object sender, RoutedEventArgs e)
+        {
+            Tutorial12 tutorial12Window = new Tutorial12();
+            tutorial12Window.Show();
+        }
+
         private void miTutorial13_Click(object sender, RoutedEventArgs e)
         {
             Tutorial13 tutorial13Window = new Tutorial13();

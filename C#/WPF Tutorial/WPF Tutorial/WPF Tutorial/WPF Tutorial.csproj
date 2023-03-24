@@ -6,6 +6,7 @@
     <RootNamespace>WPF_Tutorial</RootNamespace>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+    <UseWindowsForms>True</UseWindowsForms>
   </PropertyGroup>
 
 </Project>

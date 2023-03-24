@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_Tutorial.Forms"
         mc:Ignorable="d"
-        Title="Tutorial5" Height="450" Width="800">
+        Title="Grid Control" Height="450" Width="800">
     <Grid Margin="0,0,0,1">
-        <Grid.RowDefinitions>
+        <Grid.RowDefinitions >
             <!--Can add tons of rows and it will create multiple rows-->
             <RowDefinition/>
             <!--can define the height of rows/columns using static height,

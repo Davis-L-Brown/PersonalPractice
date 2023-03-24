@@ -26,3 +26,9 @@ Tutorial 5 - Basics of Grid Layouts
 		-> EG can't have zero grids and multiple textboxes, but can have one grid 
 		   with 100 textboxes inside of it.
 	- most formatting would be done in an external file to make styling modular (similar to a css file)
+
+Tutorial 6 - Basics of user controls
+	- more complex grid structure. 
+	- utilizing views and usercontrols for the views.
+	- exporting the complex structure to a user control
+	- importing the user control into the main window using the namespace

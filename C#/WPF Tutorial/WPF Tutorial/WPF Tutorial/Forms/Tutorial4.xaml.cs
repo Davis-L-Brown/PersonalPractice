@@ -22,6 +22,19 @@ namespace WPF_Tutorial.Forms
         public Tutorial4()
         {
             InitializeComponent();
+
+            //this will change the text when the window is compiled
+            //tbHelloWorld.Text = "Hello World 2";
+        }
+
+        /// <summary>
+        /// function to change the text of our text block when user clicks the run button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnRun_Click(object sender, RoutedEventArgs e)
+        {
+            tbHelloWorld.Text = "Hello World 2";
         }
     }
 }

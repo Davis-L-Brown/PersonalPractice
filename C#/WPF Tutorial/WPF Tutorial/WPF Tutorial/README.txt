@@ -12,3 +12,7 @@ code behind or the .cs file serves as the business logic for the UI
 	describes the logic behind user interface ie event handlers and other stuff
 
 Tutorial 4 - code behind tutorial
+	- manipulating UI elements from code behind
+	- ways to do this: 
+		1. Data Binding
+		2. Control access via name 

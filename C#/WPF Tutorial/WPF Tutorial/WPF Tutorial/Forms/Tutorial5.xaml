@@ -1,13 +1,12 @@
-﻿<Window x:Class="WPF_Tutorial.Forms.Tutorial4"
+﻿<Window x:Class="WPF_Tutorial.Forms.Tutorial5"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_Tutorial.Forms"
         mc:Ignorable="d"
-        Title="Code Behind Tutorial" Height="450" Width="800">
+        Title="Tutorial5" Height="450" Width="800">
     <Grid>
-        <TextBlock Name="tbHelloWorld" Text="Hello world" FontSize="55"/>
-        <Button Name="btnRun" Width="100" Height="50" VerticalAlignment="Center" HorizontalAlignment="center" Content="Run" FontSize="20" Click="btnRun_Click"/>
+        
     </Grid>
 </Window>

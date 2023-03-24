@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -17,11 +19,39 @@ namespace WPF_Tutorial.Forms
     /// <summary>
     /// Interaction logic for Tutorial8.xaml
     /// </summary>
-    public partial class Tutorial8 : Window
+    public partial class Tutorial8 : Window, INotifyPropertyChanged
     {
         public Tutorial8()
         {
+            ///sets the data context to this file
+            DataContext = this;
             InitializeComponent();
+        }
+
+        private string boundText;
+
+        public event PropertyChangedEventHandler? PropertyChanged;
+
+        public String BoundText
+        {
+            get { return boundText; }
+            set
+            {
+                boundText = value;
+                ///need to define a datacontext to link this property to the gui element
+                //PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("BoundText")); ///sent to its own function
+                OnPropertyChanged();
+            }
+        }
+
+        private void btnSet_Click(object sender, RoutedEventArgs e)
+        {
+            boundText = "Set From Code";
+        }
+
+        private void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

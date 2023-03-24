@@ -5,8 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_Tutorial.Forms"
         mc:Ignorable="d"
-        Title="Data Bindings" Height="450" Width="800">
+        Title="Data Bindings" Height="250" Width="300">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <!--need a datacontext to link this gui element to the property in the code behind-->
+        <TextBox Name="tbTxtInput" VerticalContentAlignment="center" Width="250" Height="40" FontSize="16" Text="{Binding BoundText, UpdateSourceTrigger=PropertyChanged, Mode=OneWayToSource}" />
+
+        <Button Name="btnSet" Grid.Row="1" Content="set" Width="100" Height="40" Click="btnSet_Click"/>
+
+        <TextBlock Name="tbResult" Grid.Row="2" FontSize="16" Text="{Binding BoundText}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
     </Grid>
 </Window>

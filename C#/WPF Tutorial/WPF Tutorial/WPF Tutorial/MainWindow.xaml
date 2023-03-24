@@ -14,6 +14,9 @@
             <MenuItem Header="_Tutorial 6" Click="miTutorial6_Click"></MenuItem>
             <MenuItem Header="_Tutorial 7" Click="miTutorial7_Click"></MenuItem>
             <MenuItem Header="_Tutorial 8" Click="miTutorial8_Click"></MenuItem>
+            <MenuItem Header="_Tutorial 9" Click="miTutorial9_Click"></MenuItem>
+            <MenuItem Header="_Tutorial 10" Click="miTutorial10_Click"></MenuItem>
+            <MenuItem Header="_Tutorial 11" Click="miTutorial11_Click"></MenuItem>
             <MenuItem Header="_Tutorial 13" Click="miTutorial13_Click"></MenuItem>
         </Menu>
     </Grid>

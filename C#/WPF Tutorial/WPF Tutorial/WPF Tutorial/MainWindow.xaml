@@ -7,6 +7,10 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
         <Menu>
             <MenuItem Header="_Tutorial 3" Click="miTutorial3_Click"></MenuItem>
             <MenuItem Header="_Tutorial 4" Click="miTutorial4_Click"></MenuItem>
@@ -20,6 +24,12 @@
             <MenuItem Header="_Tutorial 12" Click="miTutorial12_Click"></MenuItem>
             <MenuItem Header="_Tutorial 13" Click="miTutorial13_Click"></MenuItem>
         </Menu>
-        
+        <TextBlock Grid.Row="1" Text="3: Hello World" Margin="0,10,0,0"></TextBlock>
+        <TextBlock Grid.Row="1" Text="4: Code Behind Tutorial" Margin="0,20,0,0"/>
+        <TextBlock Grid.Row="1" Text="5: Grid Control" Margin="0,30,0,0"/>
+        <TextBlock Grid.Row="1" Text="6: Custom UserControls" Margin="0,40,0,0"/>
+        <TextBlock Grid.Row="1" Text="7: Custom TextBox Control" Margin="0,50,0,0"/>
+        <TextBlock Grid.Row="1" Text="8: Intro To Data Binding" Margin="0,60,0,0"/>
+        <TextBlock Grid.Row="1" Text="9: Message Box Class" Margin="0,70,0,0"/>
     </Grid>
 </Window>

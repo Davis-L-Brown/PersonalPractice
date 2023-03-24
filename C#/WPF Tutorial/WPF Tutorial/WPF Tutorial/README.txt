@@ -32,3 +32,16 @@ Tutorial 6 - Basics of user controls
 	- utilizing views and usercontrols for the views.
 	- exporting the complex structure to a user control
 	- importing the user control into the main window using the namespace
+
+Tutorial 7 Custom Textbox Control
+	- create a user control for custom textboxes that have:
+		1. placeholder textblocks
+		2. user input textboxes
+		3. clear buttons
+	- user control created in the view>usercontrol DIR
+		- linked via importing the namespace
+	- placeholder textbox.text is binded to a property "PlaceHolder" in the 
+	  custom textbox user control class.
+	- each individual textbox in the main window sets the unique placeholder
+	  using the PlaceHolder property (accessible because the textbox is of custom
+	  class UserControls:ClearableTextBox)

@@ -9,5 +9,6 @@
     <Grid>
         <TextBlock Name="tbHelloWorld" Text="Hello world" FontSize="55"/>
         <Button Name="btnRun" Width="100" Height="50" VerticalAlignment="Center" HorizontalAlignment="center" Content="Run" FontSize="20" Click="btnRun_Click"/>
+        <TextBlock Name="tbRunStatus" Text="Stopped" FontSize="25" VerticalAlignment="Top" TextAlignment="Center" Margin="150,253,150,0"/>
     </Grid>
 </Window>

@@ -19,6 +19,7 @@ namespace WPF_Tutorial.Forms
     /// </summary>
     public partial class Tutorial4 : Window
     {
+        bool running = false;
         public Tutorial4()
         {
             InitializeComponent();
@@ -34,7 +35,21 @@ namespace WPF_Tutorial.Forms
         /// <param name="e"></param>
         private void btnRun_Click(object sender, RoutedEventArgs e)
         {
-            tbHelloWorld.Text = "Hello World 2";
+            if (running)
+            {
+                //running = false;
+                tbHelloWorld.Text = "Hello World";
+                tbRunStatus.Text = "Stopped";
+                btnRun.Content = "Run";
+            }
+            else
+            {
+                //running = true;
+                tbHelloWorld.Text = "Hello World 2";
+                tbRunStatus.Text = "Running";
+                btnRun.Content = "Stop";
+            }
+            running = !running;
         }
     }
 }

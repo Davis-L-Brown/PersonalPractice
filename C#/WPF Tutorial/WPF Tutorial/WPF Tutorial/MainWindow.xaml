@@ -13,6 +13,7 @@
             <MenuItem Header="_Tutorial 5" Click="miTutorial5_Click"></MenuItem>
             <MenuItem Header="_Tutorial 6" Click="miTutorial6_Click"></MenuItem>
             <MenuItem Header="_Tutorial 7" Click="miTutorial7_Click"></MenuItem>
+            <MenuItem Header="_Tutorial 8" Click="miTutorial8_Click"></MenuItem>
             <MenuItem Header="_Tutorial 13" Click="miTutorial13_Click"></MenuItem>
         </Menu>
     </Grid>

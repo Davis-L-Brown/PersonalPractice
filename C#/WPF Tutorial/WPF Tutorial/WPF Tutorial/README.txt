@@ -45,3 +45,5 @@ Tutorial 7 Custom Textbox Control
 	- each individual textbox in the main window sets the unique placeholder
 	  using the PlaceHolder property (accessible because the textbox is of custom
 	  class UserControls:ClearableTextBox)
+
+Tutorial 8 Data Bindings

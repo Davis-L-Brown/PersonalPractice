@@ -8,8 +8,8 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="90*"/>
         </Grid.RowDefinitions>
         <Menu>
             <MenuItem Header="_Tutorial 3" Click="miTutorial3_Click"></MenuItem>
@@ -23,6 +23,11 @@
             <MenuItem Header="_Tutorial 11" Click="miTutorial11_Click"></MenuItem>
             <MenuItem Header="_Tutorial 12" Click="miTutorial12_Click"></MenuItem>
             <MenuItem Header="_Tutorial 13" Click="miTutorial13_Click"></MenuItem>
+            <MenuItem Header="_Tutorial 14" Click="miTutorial14_Click"></MenuItem>
+            <MenuItem Header="_Tutorial 15" Click="miTutorial15_Click"></MenuItem>
+            <MenuItem Header="_Tutorial 16" Click="miTutorial16_Click"></MenuItem>
+            <MenuItem Header="_Tutorial 17" Click="miTutorial17_Click"></MenuItem>
+            <MenuItem Header="_Tutorial 18" Click="miTutorial18_Click"></MenuItem>
         </Menu>
         <TextBlock Grid.Row="1" Text="3: Hello World" Margin="0,10,0,0"></TextBlock>
         <TextBlock Grid.Row="1" Text="4: Code Behind Tutorial" Margin="0,20,0,0"/>
@@ -31,5 +36,14 @@
         <TextBlock Grid.Row="1" Text="7: Custom TextBox Control" Margin="0,50,0,0"/>
         <TextBlock Grid.Row="1" Text="8: Intro To Data Binding" Margin="0,60,0,0"/>
         <TextBlock Grid.Row="1" Text="9: Message Box Class" Margin="0,70,0,0"/>
+        <TextBlock Grid.Row="1" Text="10: File Picker" Margin="0,80,0,0"/>
+        <TextBlock Grid.Row="1" Text="11: Folder Browser Dialog" Margin="0,90,0,0"/>
+        <TextBlock Grid.Row="1" Text="12: ListView" Margin="0,100,0,0"/>
+        <TextBlock Grid.Row="1" Text="13: ListView Binded to ObservableCollection" Margin="0,110,0,0"/>
+        <TextBlock Grid.Row="1" Text="14: Stack Panels" Margin="0,120,0,0"/>
+        <TextBlock Grid.Row="1" Text="15: Grid Splitter" Margin="0,130,0,0"/>
+        <TextBlock Grid.Row="1" Text="16: Expander control" Margin="0,140,0,0"/>
+        <TextBlock Grid.Row="1" Text="17: ScrollViewer" Margin="0,150,0,0"/>
+        <TextBlock Grid.Row="1" Text="18: Custom Application Windows" Margin="0,160,0,0"/>
     </Grid>
 </Window>

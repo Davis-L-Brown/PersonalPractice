@@ -38,7 +38,7 @@ namespace WPF_Tutorial.Forms
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            entries.Add(tbEntry.Text);
+            Entries.Add(tbEntry.Text);
         }
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)

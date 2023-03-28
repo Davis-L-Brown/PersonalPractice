@@ -32,7 +32,7 @@ namespace WPF_Tutorial.Forms
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        public String BoundText
+        public string BoundText
         {
             get { return boundText; }
             set
@@ -46,7 +46,7 @@ namespace WPF_Tutorial.Forms
 
         private void btnSet_Click(object sender, RoutedEventArgs e)
         {
-            boundText = "Set From Code";
+            BoundText = "Set From Code";
         }
 
         private void OnPropertyChanged([CallerMemberName] string propertyName = null)

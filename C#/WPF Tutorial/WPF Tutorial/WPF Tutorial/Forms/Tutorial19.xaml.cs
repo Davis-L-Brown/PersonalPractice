@@ -21,6 +21,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 using Emoji.Wpf;
+using WPF_Tutorial.Views.Tutorial19View.Forms;
 
 namespace WPF_Tutorial.Forms
 {
@@ -46,7 +47,8 @@ namespace WPF_Tutorial.Forms
 
         private void btnJoin_Enterprise(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Insert sunglasses emoji here");
+            Emoticon coolGuy = new Emoticon();
+            coolGuy.Show();
         }
     }
 }

@@ -9,4 +9,18 @@
     <UseWindowsForms>True</UseWindowsForms>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="images\sunglassesemoji.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="images\sunglassesemoji.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Emoji.Wpf" Version="0.3.4" />
+  </ItemGroup>
+
 </Project>

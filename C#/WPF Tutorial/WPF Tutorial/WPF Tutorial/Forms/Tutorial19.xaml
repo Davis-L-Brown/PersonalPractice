@@ -62,7 +62,6 @@
                     FontSize="16"/>
             </Grid>
 
-            
              <userControl:TierCard Grid.Column="1" Description="The Pro Tier" Color="Blue" JoinClick="btnJoin_Pro">
                 <userControl:TierCard.Header>
                     <TextBlock Text="Pro" FontSize="24"/>

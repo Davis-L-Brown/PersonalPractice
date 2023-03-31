@@ -1,0 +1,32 @@
+﻿<Window x:Class="DataVisualization.Forms.AboutForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DataVisualization.Forms"
+        xmlns:userControls="clr-namespace:DataVisualization.Views.UserControls"
+        mc:Ignorable="d"
+        Title="About" Height="450" Width="800" Background="#FF908585">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="95*"/>
+        </Grid.RowDefinitions>
+        <!-- Row 1 -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10*"/>
+                <ColumnDefinition Width="90*"/>
+            </Grid.ColumnDefinitions>
+            <!-- Row 1 Column 0 -->
+            <userControls:SideBar Grid.Row="1" Grid.Column="0">
+                <TextBlock Text="Setting1"/>
+                <TextBlock Text="Setting2"/>
+            </userControls:SideBar>
+            
+            
+            
+            
+        </Grid>
+    </Grid>
+</Window>

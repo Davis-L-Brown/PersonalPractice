@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using DataVisualization.Interfaces;
 using LiveCharts;
 using LiveCharts.Wpf;
 
@@ -23,6 +24,13 @@ namespace DataVisualization
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        private ObservableCollection<ICity> cities;
+        public ObservableCollection<ICity> Cities
+        {
+            get { return cities; }
+            set { cities = value; }
+        }
 
         private static readonly Random rand = new Random();
 
@@ -64,11 +72,13 @@ namespace DataVisualization
 
         public Func<double, string> Formatter { get; set; }
 
-        public MainWindow(CartesianChart dataChart, SeriesCollection sCollection, ColumnSeries cSeries)
+        public MainWindow(CartesianChart dataChart, SeriesCollection sCollection, ColumnSeries cSeries, ObservableCollection<ICity> cities)
         {
+            DataContext = this;
             //_dataChart = dataChart;
             _seriesCollection = sCollection;
             _series = cSeries;
+            Cities = cities;
             InitializeComponent();
 
             Labels = new[] { "Jan", "Feb", "Mar", "Apr" };
@@ -86,6 +96,11 @@ namespace DataVisualization
                 Title = "RandomResults",
                 Values = new ChartValues<double>(generatedResults)
             });
+        }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }

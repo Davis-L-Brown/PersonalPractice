@@ -12,11 +12,6 @@
     <PackageReference Include="LiveCharts" Version="0.9.7" />
     <PackageReference Include="LiveCharts.Wpf" Version="0.9.7" />
     <PackageReference Include="SimpleInjector" Version="5.4.1" />
-    <PackageReference Include="System.ServiceModel.Primitives" Version="6.0.0-preview1.23060.3" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\RichDataClient\RichDataClient.csproj" />
   </ItemGroup>
 
 </Project>

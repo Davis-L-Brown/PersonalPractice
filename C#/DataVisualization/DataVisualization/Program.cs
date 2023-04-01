@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
 using DataVisualization;
-using RichDataClient.Clients;
-using RichDataClient.Interfaces;
+using DataVisualization.Interfaces;
 using LiveCharts;
 using LiveCharts.Wpf;
 using SimpleInjector;
@@ -35,8 +35,9 @@ static class Program
         // Register your types, for instance:
         //container.Register<IQueryProcessor, QueryProcessor>(Lifestyle.Singleton);
         //container.Register<IUserContext, WpfUserContext>();
+        ObservableCollection<ICity> cities = new ObservableCollection<ICity>();
+        container.RegisterInstance(typeof(ObservableCollection<ICity>), cities);
 
-        container.Register<IRichDataClient, cRichDataClient>(Lifestyle.Singleton);
 
         CartesianChart dataChart = new CartesianChart();
         container.RegisterInstance(typeof(CartesianChart), dataChart);

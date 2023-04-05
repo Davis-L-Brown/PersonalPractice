@@ -34,16 +34,23 @@ namespace WPF_Tutorial.Forms
 
         public static event PropertyChangedEventHandler? PropertyChanged;
 
-        public ISeries[] Series { get; set; }
-            = new ISeries[]
-            {
-                new LineSeries<double>
-                {
-                    Values=new double[] {2,1,3,5,3,4,6 },
-                    Fill = null
-                }
-            };
 
+        /// <summary>
+        /// row 0 column 0 line chart 
+        /// </summary>
+        public ISeries[] Series { get; set; }
+        = new ISeries[]
+        {
+            new LineSeries<double>
+            {
+                Values=new double[] {2,1,3,5,3,4,6 },
+                Fill = null
+            }
+        };
+
+        /// <summary>
+        /// row 1 column 0
+        /// </summary>
         public ISeries[] Series2 { get; set; }
         = new ISeries[]
         {
@@ -71,20 +78,35 @@ namespace WPF_Tutorial.Forms
             }
         };
 
+        /// <summary>
+        /// row 0 column 1
+        /// </summary>
         private ChartValues<double> series3;
 
         public ChartValues<double> Series3 { 
-            get
-            {
-                return series3;
-            }
+            get { return series3; }
             set { series3 = value; OnPropertyChanged(); }
         }
+
+        /// <summary>
+        /// row 1 column 1
+        /// </summary>
+        public City[] Cities { get; set; }
 
         public Tutorial20()
         {
             DataContext = this;
+            
+            ///row 0 column 1
             Series3 = new ChartValues<double>();
+            ///row 1 column 1
+            Cities = new City[]
+            {
+                new City { Name = "Tokyo", Population = 10, Density = 5},
+                new City { Name = "Cape Town", Population=9, Density=6 },
+                new City { Name = "New York", Population = 8, Density = 7}
+            };
+
             InitializeComponent();
         }
 
@@ -106,5 +128,13 @@ namespace WPF_Tutorial.Forms
             try { double.TryParse(value, out var result); return true; }
             catch { return false; }
         }
+    }
+
+
+    public class City
+    {
+        public string Name { get; set; }
+        public double Population { get; set; }
+        public double Density { get; set; }
     }
 }

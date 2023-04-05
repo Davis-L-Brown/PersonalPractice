@@ -42,9 +42,23 @@
             <lvc1:CartesianChart
                 Grid.Row="1">
                 <lvc1:CartesianChart.Series>
-                    <lvc1:LineSeries Values="{Binding Series3}"/>
+                    <lvc1:LineSeries Values="{Binding ValuesCollection}"/>
                 </lvc1:CartesianChart.Series>
             </lvc1:CartesianChart>
+
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25*"/>
+                <RowDefinition Height="75*"/>
+            </Grid.RowDefinitions>
+
+            <Button Name="btnAdd2" Grid.Row="0" Margin="70,0,230,0" Content="Add Value" Click="btnAdd2_Click"/>
+            <TextBox Name="tbAdd2" Grid.Row="0" Margin="230,0,70,0" BorderBrush="Black" Background="LightGray"/>
+
+            <lvc:CartesianChart>
+                
+            </lvc:CartesianChart>
             
         </Grid>
 

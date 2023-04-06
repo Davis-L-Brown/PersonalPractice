@@ -42,7 +42,7 @@
             <lvc1:CartesianChart
                 Grid.Row="1">
                 <lvc1:CartesianChart.Series>
-                    <lvc1:LineSeries Values="{Binding ValuesCollection}"/>
+                    <lvc1:LineSeries Values="{Binding Series3}"/>
                 </lvc1:CartesianChart.Series>
             </lvc1:CartesianChart>
 

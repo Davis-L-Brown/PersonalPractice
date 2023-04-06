@@ -99,13 +99,8 @@ namespace WPF_Tutorial.Forms
             
             ///row 0 column 1
             Series3 = new ChartValues<double>();
-            ///row 1 column 1
-            Cities = new City[]
-            {
-                new City { Name = "Tokyo", Population = 10, Density = 5},
-                new City { Name = "Cape Town", Population=9, Density=6 },
-                new City { Name = "New York", Population = 8, Density = 7}
-            };
+            
+
 
             InitializeComponent();
         }
@@ -127,6 +122,11 @@ namespace WPF_Tutorial.Forms
         {
             try { double.TryParse(value, out var result); return true; }
             catch { return false; }
+        }
+
+        private void btnAdd2_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 

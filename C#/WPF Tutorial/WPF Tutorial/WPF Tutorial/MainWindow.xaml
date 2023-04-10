@@ -30,6 +30,8 @@
             <MenuItem Header="_Tutorial 18" Click="miTutorial18_Click"></MenuItem>
             <MenuItem Header="_Tutorial 19" Click="miTutorial19_Click"></MenuItem>
             <MenuItem Header="_Tutorial 20" Click="miTutorial20_Click"></MenuItem>
+            <MenuItem Header="_Tutorial 21" Click="miTutorial21_Click"></MenuItem>
+
         </Menu>
         <TextBlock Grid.Row="1" Text="3: Hello World" Margin="0,10,0,0"></TextBlock>
         <TextBlock Grid.Row="1" Text="4: Code Behind Tutorial" Margin="0,20,0,0"/>
@@ -49,5 +51,6 @@
         <TextBlock Grid.Row="1" Text="18: Custom Application Windows" Margin="0,160,0,0"/>
         <TextBlock Grid.Row="1" Text="19: Reusable User Controls" Margin="0,170,0,0"/>
         <TextBlock Grid.Row="1" Text="20: LiveCharts" Margin="0,180,0,0"/>
+        <TextBlock Grid.Row="1" Text="21: User Settings" Margin="0,190,0,0"/>
     </Grid>
 </Window>

@@ -1,0 +1,59 @@
+﻿<Window x:Class="WPF_Tutorial.Forms.Tutorial21"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Tutorial.Forms"
+        mc:Ignorable="d"
+        Title="User Settings" Height="450" Width="800" Background="White">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".5*"/>
+            <RowDefinition Height="2.5*"/>
+            <RowDefinition Height="7*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="LightGray">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="80*"/>
+            </Grid.ColumnDefinitions>
+            <Menu Grid.Column="0">
+                <MenuItem Header="_File">
+                    <MenuItem Header="_Dark Mode" Click="miDarkModeEnabled"/>
+                </MenuItem>
+            </Menu>
+            <RadioButton Name="rdbtnDarkMode" Grid.Column="1" Content="DarkMode" Click="miDarkModeEnabled"/>
+        </Grid>
+        <TextBlock Name="description" 
+            Grid.Row="1" xml:space="preserve" Grid.RowSpan="2"> In order to create application settings:
+        In the solution explorer, right click on your project
+        Select Properties>Settings>General
+        You may need to create a new settings file. VS will handle that.
+        Click create or open application settings
+        Settings can be created for both the application and the user in this window.
+        </TextBlock>
+
+        <TextBlock Name="Code"
+            Grid.Row="2" 
+            xml:space="preserve">
+    Changes made to the user and application settings will be saved in the settings.settings file:
+            Dir: properties>settings.settings
+            In the application csproj file, when the settings file is created, &lt;ItemGroup&gt; tags will populate.
+            
+    &lt;ItemGroup&gt;
+        &lt;Compile Update="Properties\Settings.Designer.cs"&gt;
+            &lt;DesignTimeSharedInput&gt;True&lt;/DesignTimeSharedInput&gt;
+            &lt;AutoGen&gt;True&lt;/AutoGen&gt;
+            &lt;DependentUpon&lt;Settings.settings&lt;/DependentUpon&gt;
+        &lt;/Compile&gt;
+    &lt;/ItemGroup&gt;
+
+    &lt;ItemGroup&gt;
+        &lt;None Update="Properties\Settings.settings"&gt;
+            &lt;Generator&gt;SettingsSingleFileGenerator&lt;/Generator&gt;
+            &lt;LastGenOutput&gt;Settings.Designer.cs&lt;/LastGenOutput&gt;
+        &lt;/None&gt;
+    &lt;/ItemGroup&gt;
+        </TextBlock>
+    </Grid>
+</Window>

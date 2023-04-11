@@ -4,9 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_Tutorial.Forms"
+        xmlns:CC="clr-namespace:WPF_Tutorial.Views.Tutorial23View.CustomControls"
         mc:Ignorable="d"
         Title="Tutorial23" Height="450" Width="800">
     <Grid>
-        
+        <Frame Source="/Views/Tutorial23View/Pages/LandingPage.xaml" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

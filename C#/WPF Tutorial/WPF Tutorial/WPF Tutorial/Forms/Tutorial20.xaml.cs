@@ -91,17 +91,35 @@ namespace WPF_Tutorial.Forms
         /// <summary>
         /// row 1 column 1
         /// </summary>
-        public City[] Cities { get; set; }
+        private ObservableCollection<double> valuesCollection;
 
+        public ObservableCollection<double> ValuesCollection { 
+            get { return valuesCollection; }
+            set { valuesCollection = value; OnPropertyChanged(); }
+        }
+
+        public ObservableCollection<double> Crater;
+
+        private LineSeries<double> series4;
+        public LineSeries<double> Series4
+        {
+            get { return series4; }
+            set { series4 = value; OnPropertyChanged(); }
+        }
+
+        
         public Tutorial20()
         {
             DataContext = this;
             
-            ///row 0 column 1
+            ///graph 3: row 0 column 1
             Series3 = new ChartValues<double>();
             
-
-
+            ///graph 4: row 1 column 1
+            ValuesCollection = new ObservableCollection<double>();
+            Series4 = new LineSeries<double>();
+            Crater = new ObservableCollection<double>();
+            Series4.Values = Crater;
             InitializeComponent();
         }
 
@@ -118,16 +136,22 @@ namespace WPF_Tutorial.Forms
             }
         }
 
+        private void btnAdd2_Click(object sender, RoutedEventArgs e)
+        {
+            if (Convertable(tbAdd2.Text))
+            {
+                Crater.Add(double.Parse(tbAdd2.Text));
+                ValuesCollection.Add(double.Parse(tbAdd2.Text));
+            }
+        }
+
         private bool Convertable(string value)
         {
             try { double.TryParse(value, out var result); return true; }
             catch { return false; }
         }
 
-        private void btnAdd2_Click(object sender, RoutedEventArgs e)
-        {
 
-        }
     }
 
 

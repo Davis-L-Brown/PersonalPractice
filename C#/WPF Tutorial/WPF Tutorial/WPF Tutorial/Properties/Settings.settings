@@ -5,5 +5,8 @@
     <Setting Name="DarkMode" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
+    <Setting Name="ColorMode" Type="System.String" Scope="User">
+      <Value Profile="(Default)">LiteMode</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

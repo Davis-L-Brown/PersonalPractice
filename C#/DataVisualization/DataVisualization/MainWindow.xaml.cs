@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -14,6 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DataVisualization.Interfaces;
+using DataVisualization.Forms;
 using LiveCharts;
 using LiveCharts.Wpf;
 
@@ -32,6 +35,7 @@ namespace DataVisualization
             set { cities = value; }
         }
 
+        #region stuff I'm not using anymore but want for a reference
         private static readonly Random rand = new Random();
 
         ///private CartesianChart _dataChart { get; set; }
@@ -71,6 +75,7 @@ namespace DataVisualization
         public string[] Labels { get; set; }
 
         public Func<double, string> Formatter { get; set; }
+        #endregion
 
         public MainWindow(CartesianChart dataChart, SeriesCollection sCollection, ColumnSeries cSeries, ObservableCollection<ICity> cities)
         {
@@ -86,20 +91,23 @@ namespace DataVisualization
             DataContext = this;
         }
 
+
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
             /// research how to add to a c# dictionary
             /// double[] generatedResults = fakeYresults;
-            List<double> generatedResults = fakeYresults;
-            _seriesCollection.Add(new LineSeries
-            {
-                Title = "RandomResults",
-                Values = new ChartValues<double>(generatedResults)
-            });
+            //List<double> generatedResults = fakeYresults;
+            //_seriesCollection.Add(new LineSeries
+            //{
+            //    Title = "RandomResults",
+            //    Values = new ChartValues<double>(generatedResults)
+            //});
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
+            CityAdder AddCity = new CityAdder();
+            
             
         }
     }

@@ -1,0 +1,18 @@
+﻿<Window x:Class="DataVisualization.Forms.CityAdder"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DataVisualization.Forms"
+        mc:Ignorable="d"
+        Title="Add A City" Height="450" Width="800">
+    <Grid>
+        <TextBlock  Text="City Name:"   Height="30" Width="100" TextAlignment="Center" FontSize="16" Margin="245,135,433,271"/>
+        <TextBox    Name="tbCity"       Height="30" Background="Transparent" BorderBrush="Black" Margin="367,134,220,270"/>
+        <TextBlock  Text="City Name:"   Height="30" Width="100" TextAlignment="Center" FontSize="16" Margin="245,187,438,217"/>
+        <TextBox    Name="tbPopulation" Height="30" Background="Transparent" BorderBrush="Black" Margin="367,187,220,217"/>
+        <TextBlock  Text="Founded:"     Height="30" Width="100" TextAlignment="Center" FontSize="16" Margin="245,247,438,157"/>
+        <DatePicker Name="dpFounded"    Height="30" Text="Founding Date" Margin="367,247,220,157"/>
+        <Button Name="btnSubmit" Content="Submit City" Height="40" Width="80" Margin="360,297,360,97"/>
+    </Grid>
+</Window>

@@ -20,8 +20,8 @@
             </Grid.ColumnDefinitions>
             <!-- Row 1 Column 0 -->
             <userControls:SideBar Grid.Row="1" Grid.Column="0">
-                <TextBlock Text="Setting1"/>
-                <TextBlock Text="Setting2"/>
+                <TextBlock Text="About1"/>
+                <TextBlock Text="About2"/>
             </userControls:SideBar>
             
             

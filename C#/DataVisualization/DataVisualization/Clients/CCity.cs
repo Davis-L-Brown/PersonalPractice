@@ -38,5 +38,12 @@ namespace DataVisualization.Clients
             Population = population;
             FoundingDate = foundingDate;   
         }
+
+        public CCity(string name, double population)
+        {
+            Name = name;
+            Population = population;
+            FoundingDate = new DateTime(1999, 1, 1);
+        }
     }
 }

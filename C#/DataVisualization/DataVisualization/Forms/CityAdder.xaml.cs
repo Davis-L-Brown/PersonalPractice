@@ -10,26 +10,20 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace DataVisualization.Views.UserControls
+namespace DataVisualization.Forms
 {
     /// <summary>
-    /// Interaction logic for SideBarItem.xaml
+    /// Interaction logic for CityAdder.xaml
     /// </summary>
-    public partial class SideBarItem : UserControl
+    public partial class CityAdder : Window
     {
-        public SideBarItem()
+        public string CityName { get { return CityName; } set { CityName = value; } }
+        public string Population { get { return Population; } set { Population = value; } }
+        public CityAdder()
         {
             InitializeComponent();
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-
     }
 }

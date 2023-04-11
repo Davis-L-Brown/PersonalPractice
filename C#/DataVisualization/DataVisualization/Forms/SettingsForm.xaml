@@ -21,7 +21,9 @@
             
             <!-- Row 1 column 0 -->
             <userControls:SideBar>
+                <userControls:SideBarItem><TextBlock Text="Setting1"/></userControls:SideBarItem>
                 
+                <TextBlock Text="Setting2"/>
             </userControls:SideBar>
         </Grid>
     </Grid>

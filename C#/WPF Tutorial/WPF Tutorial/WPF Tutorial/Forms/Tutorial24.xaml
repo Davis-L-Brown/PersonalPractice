@@ -28,12 +28,13 @@
                                  Style="{StaticResource SideMenuItem}"
                                  VerticalAlignment="Center"
                                  HorizontalAlignment="Center"/>
-                <CC:SideMenuItem
+                <CC:SideMenuItem Header="_about 1"
                                  NavUri=""
                                  Style="{StaticResource SideMenuItem}"
                                  VerticalAlignment="Center"
                                  HorizontalAlignment="Center"/>
-                <CC:SideMenuItem NavUri=""
+                <CC:SideMenuItem Header="_About 2"
+                                 NavUri=""
                                  VerticalAlignment="Center"
                                  HorizontalAlignment="Center"/>
             </UC:SideMenuBar>

@@ -4,8 +4,10 @@
     xmlns:local="clr-namespace:WPF_Tutorial"
     xmlns:CC24="clr-namespace:WPF_Tutorial.Views.Tutorial24View.CustomControls">
 
+    <CC24:StringConverter x:Key="StringConverter"/>
+
     <ControlTemplate x:Key="SideMenuItemTemplate" TargetType="{x:Type CC24:SideMenuItem}">
-        <TextBlock Text="Template goes here"/>
+        <TextBlock Text="{TemplateBinding Header, Converter={StaticResource StringConverter}}"/>
     </ControlTemplate>
 
     <Style x:Key="SideMenuItem" TargetType="{x:Type CC24:SideMenuItem}">
@@ -14,17 +16,4 @@
 
     <Style TargetType="{x:Type CC24:SideMenuItem}" BasedOn="{StaticResource SideMenuItem}"/>
 
-    <!--<Style TargetType="{x:Type CC24:SideMenuItem}">
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type CC24:SideMenuItem}">
-                    <Border Background="Transparent"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="0"
-                            x:Name="SelectedItem">
-                    </Border>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>-->
 </ResourceDictionary>

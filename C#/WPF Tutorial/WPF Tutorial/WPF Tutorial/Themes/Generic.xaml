@@ -7,7 +7,9 @@
     <CC24:StringConverter x:Key="StringConverter"/>
 
     <ControlTemplate x:Key="SideMenuItemTemplate" TargetType="{x:Type CC24:SideMenuItem}">
-        <TextBlock Text="{TemplateBinding Header, Converter={StaticResource StringConverter}}"/>
+        <TextBlock Text="{TemplateBinding Header, Converter={StaticResource StringConverter}}"
+                   HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                   VerticalAlignment="{TemplateBinding VerticalAlignment}" />
     </ControlTemplate>
 
     <Style x:Key="SideMenuItem" TargetType="{x:Type CC24:SideMenuItem}">

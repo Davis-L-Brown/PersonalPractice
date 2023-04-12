@@ -1,0 +1,30 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:WPF_Tutorial"
+    xmlns:CC24="clr-namespace:WPF_Tutorial.Views.Tutorial24View.CustomControls">
+
+    <ControlTemplate x:Key="SideMenuItemTemplate" TargetType="{x:Type CC24:SideMenuItem}">
+        <TextBlock Text="Template goes here"/>
+    </ControlTemplate>
+
+    <Style x:Key="SideMenuItem" TargetType="{x:Type CC24:SideMenuItem}">
+        <Setter Property="Template" Value="{StaticResource SideMenuItemTemplate}"/>
+    </Style>
+
+    <Style TargetType="{x:Type CC24:SideMenuItem}" BasedOn="{StaticResource SideMenuItem}"/>
+
+    <!--<Style TargetType="{x:Type CC24:SideMenuItem}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type CC24:SideMenuItem}">
+                    <Border Background="Transparent"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="0"
+                            x:Name="SelectedItem">
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>-->
+</ResourceDictionary>

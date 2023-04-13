@@ -56,7 +56,7 @@
         </Setter>
     </Style>
 
-    
+
     <CC24:StringConverter x:Key="StringConverter"/>
 
     <ControlTemplate x:Key="SideMenuItemTemplate" TargetType="{x:Type CC24:SideMenuItem}">

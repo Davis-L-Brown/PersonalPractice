@@ -52,3 +52,10 @@ Tutorial 8 Data Bindings
 Tutorial 22 Dark and Light mode: https://www.youtube.com/watch?v=B4MWVK4HiH4
 
 tutorial 23 Frame Navigation : https://www.youtube.com/watch?v=1PD4H35ETGw
+
+Tutorial 24 Custom About Window with nav bar and pages
+	- uses custom controls inside of a user control
+	- utilize pages instead of hiding text in window
+	- help from:
+		1. https://www.youtube.com/watch?v=T4U9ce8J93Q
+		2. 

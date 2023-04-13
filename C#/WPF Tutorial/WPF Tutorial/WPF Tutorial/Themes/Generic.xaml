@@ -1,17 +1,18 @@
 <ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:WPF_Tutorial.Views.Tutorial23View.CustomControls">
-
+    xmlns:local="clr-namespace:WPF_Tutorial"
+    xmlns:CC23="clr-namespace:WPF_Tutorial.Views.Tutorial23View.CustomControls"
+    xmlns:CC24="clr-namespace:WPF_Tutorial.Views.Tutorial24View.CustomControls">
     <!-- this Generic resource dictionary defines the appearence of the custom control we created in tutorial 23-->
-    <Style TargetType="{x:Type local:NavButton}">
+    <Style TargetType="{x:Type CC23:NavButton}">
 
         <!-- Not sure why this was added -->
         <Setter Property="Margin" Value="2"/>
 
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type local:NavButton}">
+                <ControlTemplate TargetType="{x:Type CC23:NavButton}">
                     <Border Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}">
@@ -40,7 +41,7 @@
                                        StrokeDashArray="1,2"
                                        StrokeThickness="0"/>
                         </Grid>
-                        
+
                     </Border>
 
                     <!-- create a trigger to make the rectangle thick when mouse hovers over it -->
@@ -49,9 +50,25 @@
                             <Setter Property="StrokeThickness" TargetName="Line" Value="1"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
-                    
+
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
+
+    
+    <CC24:StringConverter x:Key="StringConverter"/>
+
+    <ControlTemplate x:Key="SideMenuItemTemplate" TargetType="{x:Type CC24:SideMenuItem}">
+        <TextBlock Text="{TemplateBinding Header, Converter={StaticResource StringConverter}}"
+                   HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                   VerticalAlignment="{TemplateBinding VerticalAlignment}" />
+    </ControlTemplate>
+
+    <Style x:Key="SideMenuItem" TargetType="{x:Type CC24:SideMenuItem}">
+        <Setter Property="Template" Value="{StaticResource SideMenuItemTemplate}"/>
+    </Style>
+
+    <Style TargetType="{x:Type CC24:SideMenuItem}" BasedOn="{StaticResource SideMenuItem}"/>
+
 </ResourceDictionary>

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,39 +41,49 @@ namespace WPF_Tutorial.Views.Tutorial24View.CustomControls
     /// Step 2)
     /// Go ahead and use your control in the XAML file.
     ///
-    ///     <MyNamespace:SideMenuItem/>
+    ///     <MyNamespace:PictoralSideMenuItem/>
     ///
     /// </summary>
-    public class SideMenuItem : MenuItem
+    public class PictoralSideMenuItem : SideMenuItem
     {
 
-        public Uri NavUri
+        /// <summary>
+        /// image source for the pictoral menu item 
+        /// </summary>
+        public ImageSource image
         {
-            get { return (Uri)GetValue(NavUriProperty); }
-            set { SetValue(NavUriProperty, value); }
+            get { return (ImageSource)GetValue(imageProperty); }
+            set { SetValue(imageProperty, value); }
         }
 
-        // Using a DependencyProperty as the backing store for NavUri.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty NavUriProperty =
-            DependencyProperty.Register(nameof(NavUri), typeof(Uri), typeof(SideMenuItem), new PropertyMetadata(null));
+        public static readonly DependencyProperty imageProperty =
+            DependencyProperty.Register(
+                nameof(image), 
+                typeof(ImageSource), 
+                typeof(PictoralSideMenuItem), 
+                new PropertyMetadata(null));
 
 
-        static SideMenuItem()
+        /// <summary>
+        /// Stretch for the image in the pictoral menu item
+        /// </summary>
+        public Stretch Stretch
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(SideMenuItem), new FrameworkPropertyMetadata(typeof(SideMenuItem)));
+            get { return (Stretch)GetValue(StretchProperty); }
+            set { SetValue(StretchProperty, value); }
         }
-    }
 
-    public class StringConverter : IValueConverter
-    {
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            return value?.ToString();
-        }
+        public static readonly DependencyProperty StretchProperty =
+            DependencyProperty.Register(
+                nameof(Stretch), 
+                typeof(Stretch), 
+                typeof(PictoralSideMenuItem), 
+                new PropertyMetadata(null));
 
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+
+        static PictoralSideMenuItem()
         {
-            throw new NotImplementedException();
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(PictoralSideMenuItem), new FrameworkPropertyMetadata(typeof(PictoralSideMenuItem)));
         }
     }
 }

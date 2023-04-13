@@ -6,17 +6,15 @@
     xmlns:CC24="clr-namespace:WPF_Tutorial.Views.Tutorial24View.CustomControls">
     <!-- this Generic resource dictionary defines the appearence of the custom control we created in tutorial 23-->
     <Style TargetType="{x:Type CC23:NavButton}">
-
-        <!-- Not sure why this was added -->
+        <!-- Sets Margin for all UI Elements, or the NavButton as a whole? -->
+        <!-- why does it need to be here? what does this placement mean -->
         <Setter Property="Margin" Value="2"/>
-
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type CC23:NavButton}">
                     <Border Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}">
-
                         <!-- creating the custom control here -->
                         <Grid>
                             <Grid.RowDefinitions>
@@ -56,19 +54,57 @@
         </Setter>
     </Style>
 
-
+    <!-- SideMenuItem (smi) Templates -->
+    
     <CC24:StringConverter x:Key="StringConverter"/>
-
-    <ControlTemplate x:Key="SideMenuItemTemplate" TargetType="{x:Type CC24:SideMenuItem}">
+    
+    <ControlTemplate x:Key="smiTemplate" TargetType="{x:Type CC24:SideMenuItem}">
         <TextBlock Text="{TemplateBinding Header, Converter={StaticResource StringConverter}}"
                    HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
                    VerticalAlignment="{TemplateBinding VerticalAlignment}" />
     </ControlTemplate>
 
     <Style x:Key="SideMenuItem" TargetType="{x:Type CC24:SideMenuItem}">
-        <Setter Property="Template" Value="{StaticResource SideMenuItemTemplate}"/>
+        <Setter Property="Template" Value="{StaticResource smiTemplate}"/>
     </Style>
-
     <Style TargetType="{x:Type CC24:SideMenuItem}" BasedOn="{StaticResource SideMenuItem}"/>
 
+    <ControlTemplate x:Key="PictoralSMITemplate" TargetType="{x:Type CC24:PictoralSideMenuItem}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="6*"/>
+            </Grid.RowDefinitions>
+            
+            <Rectangle Grid.Row="0" Grid.RowSpan="2"
+                       Name="rBack"
+                       Fill="{TemplateBinding Background}"
+                       RadiusX="8" RadiusY="8"/>
+            <TextBlock Grid.Row="0" 
+                       Name="tbText"
+                       Text="{TemplateBinding Header, Converter={StaticResource StringConverter}}"
+                       Background="Transparent"
+                       HorizontalAlignment="{TemplateBinding HeaderHAlignment}"
+                       VerticalAlignment="{TemplateBinding HeaderVAlignment}"/>
+            <Image Grid.Row="1" 
+                   Name="iLogo"
+                   Stretch="{TemplateBinding Stretch}" 
+                   Source="{TemplateBinding image}"
+                   Margin="5"/>
+        </Grid>
+
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Fill" TargetName="rBack" Value="DarkGray"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Fill" TargetName="rBack" Value="Gray"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+        
+    </ControlTemplate>
+    <Style x:Key="PictoralSideMenuItem" TargetType="{x:Type CC24:PictoralSideMenuItem}">
+        <Setter Property="Template" Value="{StaticResource PictoralSMITemplate}"/>
+    </Style>
+    <Style TargetType="{x:Type CC24:PictoralSideMenuItem}" BasedOn="{StaticResource PictoralSideMenuItem}"/>
 </ResourceDictionary>

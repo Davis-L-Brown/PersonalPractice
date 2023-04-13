@@ -18,10 +18,11 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="8*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="6*"/>
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="0">
-         
+
             <UC:SideMenuBar>
                 <CC:SideMenuItem 
                                  NavUri=""
@@ -38,7 +39,47 @@
                                  VerticalAlignment="Center"
                                  HorizontalAlignment="Center"/>
             </UC:SideMenuBar>
-        
         </Grid>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="33.333*"/>
+                <RowDefinition Height="33.333*"/>
+                <RowDefinition Height="33.333*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="4*"/>
+                    <RowDefinition Height="6*"/>
+                </Grid.RowDefinitions>
+                <Rectangle Grid.Row="0" Grid.RowSpan="2"
+                           Fill="LightGray"
+                           RadiusX="8"
+                           RadiusY="8"/>
+                <TextBlock Grid.Row="0"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           Background="Transparent"
+                           Text="GridRectangleTextBlockImage"/>
+                <Image Grid.Row="1" 
+                       Source="pack://application:,,,/C#/WPF_Tutorial/images/sunglassesemoji.png"
+                       Stretch="Uniform"
+                       Margin="5"/>
+                <!--Source=".\WPF Tutorial\images\sunglassesemoji.png"-->
+
+            </Grid>
+            <CC:PictoralSideMenuItem Grid.Row="1"
+                                     Background="LightGray"
+                                     Header="Custom Control"
+                                     HeaderHAlignment="Center"
+                                     HeaderVAlignment="Center"
+                                     NavUri=""
+                                     image="pack://application:,,,/images/sunglassesemoji.png"
+                                     Stretch="Uniform"/>
+            <!--image="pack://WPF_Tutorial;component/images/sunglassesemoji.png"-->
+
+
+        </Grid>
+        
     </Grid>
 </Window>

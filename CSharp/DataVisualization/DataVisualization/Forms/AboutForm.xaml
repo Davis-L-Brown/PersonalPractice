@@ -4,7 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DataVisualization.Forms"
-        xmlns:userControls="clr-namespace:DataVisualization.Views.UserControls"
+        xmlns:CC="clr-namespace:DataVisualization.Views.CustomControls"
+        xmlns:UC="clr-namespace:DataVisualization.Views.UserControls"
         mc:Ignorable="d"
         Title="About" Height="450" Width="800" Background="#FF908585">
     <Grid>
@@ -19,10 +20,16 @@
                 <ColumnDefinition Width="90*"/>
             </Grid.ColumnDefinitions>
             <!-- Row 1 Column 0 -->
-            <userControls:SideBar Grid.Row="1" Grid.Column="0">
-                <TextBlock Text="About1"/>
-                <TextBlock Text="About2"/>
-            </userControls:SideBar>
+            <UC:SideMenu Grid.Row="1" Grid.Column="0">
+                <CC:SideMenuItem Header="About 1"
+                                 HeaderHAlignment="Center"
+                                 HeaderVAlignment="Center"
+                                 NavUri=""/>
+                <CC:SideMenuItem Header="About 2"
+                                 HeaderHAlignment="Center"
+                                 HeaderVAlignment="Center"
+                                 NavUri=""/>
+            </UC:SideMenu>
             
             
             

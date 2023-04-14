@@ -18,10 +18,10 @@ using System.Windows.Shapes;
 namespace DataVisualization.Views.UserControls
 {
     /// <summary>
-    /// Interaction logic for SideBar.xaml
+    /// Interaction logic for SideMenu.xaml
     /// </summary>
     [ContentProperty("SideMenuItems")]
-    public partial class SideBar : UserControl
+    public partial class SideMenu : UserControl
     {
 
         public ObservableCollection<DependencyObject> SideMenuItems
@@ -33,9 +33,9 @@ namespace DataVisualization.Views.UserControls
         internal static readonly DependencyProperty SideMenuItemsProperty = DependencyProperty.Register(
             nameof(SideMenuItems), 
             typeof(ObservableCollection<DependencyObject>), 
-            typeof(SideBar));
+            typeof(SideMenu));
 
-        public SideBar()
+        public SideMenu()
         {
             SetCurrentValue(SideMenuItemsProperty, new ObservableCollection<DependencyObject>());
             InitializeComponent();

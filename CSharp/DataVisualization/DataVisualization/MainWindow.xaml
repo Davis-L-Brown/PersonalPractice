@@ -17,10 +17,10 @@
         <!-- Row 0 -->
         <userControls:MenuBar Grid.Row="0">
             <MenuItem Header="_File">
-                <MenuItem Header="_Settings"/>
+                <MenuItem Header="_Settings" Click="Settings_Click"/>
             </MenuItem>
             <MenuItem Header="_Help">
-                <MenuItem Header="_About"/>
+                <MenuItem Header="_About" Click="About_Click"/>
             </MenuItem>
         </userControls:MenuBar>
         <!-- Row 1 -->
@@ -35,12 +35,12 @@
             <Button Name="Del" Content="Delete City" Height="40" Margin="10,75,10,300"/>
             <Button Name="Clr" Content="Clear"       Height="40" Margin="10,130,10,240"/>
             <!-- Column 1 -->
-            <ListView Grid.Column="1" Margin="10,10,10,10" Background="Transparent" ItemsSource="{Binding Cities, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}">
+            <!--<ListView Grid.Column="1" Margin="10,10,10,10" Background="Transparent" ItemsSource="{Binding Cities, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="{Binding Name}"/>
-                    <TextBlock Text="{Binding Population}"/>
+                    <TextBlock Text=""/>
+                    <TextBlock Text=""/>
                 </StackPanel>
-            </ListView>
+            </ListView>-->
         </Grid>
     </Grid>
 </Window>

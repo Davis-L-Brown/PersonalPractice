@@ -110,5 +110,19 @@ namespace DataVisualization
             
             
         }
+
+        #region Menu Item Event Handlers
+        private void Settings_Click(object sender, RoutedEventArgs e)
+        {
+            SettingsForm Settings = new SettingsForm();
+            Settings.ShowDialog();
+        }
+
+        private void About_Click(object sender, RoutedEventArgs e)
+        {
+            AboutForm about = new AboutForm();
+            about.ShowDialog(); 
+        }
+        #endregion
     }
 }

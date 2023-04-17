@@ -87,25 +87,8 @@
                                      Stretch="Uniform"/>
             <!--image="pack://WPF_Tutorial;component/images/sunglassesemoji.png" 
             image="pack://application:,,,/WPF_Tutorial/images/sunglassesemoji.png"-->
-
-
         </Grid>
 
-        <Grid Grid.Column="2">
-            <ListBox>
-                <CC:PictoralSideMenuItem Grid.Row="2"
-                                     Background="LightGray"
-                                     Header="Custom Control 2" 
-                                     HeaderHAlignment="Center"
-                                     HeaderVAlignment="Center"
-                                     NavUri=""
-                                     
-                                     Stretch="Uniform"/>
-            <!--image="pack://WPF_Tutorial;component/images/sunglassesemoji.png"-->
-
-
-            </ListBox>
-        </Grid>
         
     </Grid>
 </Window>

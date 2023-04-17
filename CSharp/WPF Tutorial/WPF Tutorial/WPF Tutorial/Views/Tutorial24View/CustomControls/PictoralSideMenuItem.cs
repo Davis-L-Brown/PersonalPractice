@@ -48,7 +48,7 @@ namespace WPF_Tutorial.Views.Tutorial24View.CustomControls
     {
 
         /// <summary>
-        /// image source for the pictoral menu item 
+        /// lbImage source for the pictoral menu item 
         /// </summary>
         public ImageSource image
         {
@@ -65,7 +65,7 @@ namespace WPF_Tutorial.Views.Tutorial24View.CustomControls
 
 
         /// <summary>
-        /// Stretch for the image in the pictoral menu item
+        /// lbStretch for the lbImage in the pictoral menu item
         /// </summary>
         public Stretch Stretch
         {

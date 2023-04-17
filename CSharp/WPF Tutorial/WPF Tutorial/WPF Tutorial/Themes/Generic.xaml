@@ -16,7 +16,7 @@
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}">
                         <!-- creating the custom control here -->
-                        <Grid>
+                        <Grid MinWidth="50">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="50"/>
                                 <RowDefinition Height="*"/>
@@ -72,6 +72,8 @@
     </Style>
     <Style TargetType="{x:Type CC24:SideMenuItem}" BasedOn="{StaticResource SideMenuItem}"/>
 
+    
+    <!-- Rectangle background -->
     <ControlTemplate x:Key="PictoralSMITemplate" TargetType="{x:Type CC24:PictoralSideMenuItem}">
         <Grid>
             <Grid.RowDefinitions>
@@ -107,8 +109,52 @@
         </ControlTemplate.Triggers>
         
     </ControlTemplate>
+    
     <Style x:Key="PictoralSideMenuItem" TargetType="{x:Type CC24:PictoralSideMenuItem}">
         <Setter Property="Template" Value="{StaticResource PictoralSMITemplate}"/>
     </Style>
     <Style TargetType="{x:Type CC24:PictoralSideMenuItem}" BasedOn="{StaticResource PictoralSideMenuItem}"/>
+
+    
+    <!-- List Box -->
+    <ControlTemplate x:Key="lbSideMenuItemTemplate" TargetType="{x:Type CC24:ListBoxSideMenuItem}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="6*"/>
+            </Grid.RowDefinitions>
+
+            <Rectangle Grid.Row="0" Grid.RowSpan="2"
+                       Name="rBack"
+                       Fill="{TemplateBinding Background}"
+                       RadiusX="8" RadiusY="8"/>
+            <TextBlock Grid.Row="0" 
+                       Name="tbText"
+                       Text="{TemplateBinding Header}"
+                       Background="Transparent"
+                       HorizontalAlignment="{TemplateBinding lbHeaderHAlignment}"
+                       VerticalAlignment="{TemplateBinding lbHeaderVAlignment}"/>
+            <Image Grid.Row="1" 
+                   Name="iLogo"
+                   Stretch="{TemplateBinding lbStretch}" 
+                   Source="{TemplateBinding lbImage}"
+                   Margin="5"/>
+        </Grid>
+
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Fill" TargetName="rBack" Value="Gray"/>
+                <Setter Property="Cursor" Value="Hand"/>
+            </Trigger>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="Fill" TargetName="rBack" Value="Gray"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <Style x:Key="lbSideMenuItem" TargetType="{x:Type CC24:ListBoxSideMenuItem}">
+        <Setter Property="Template" Value="{StaticResource lbSideMenuItemTemplate}"/>
+    </Style>
+    <Style TargetType="{x:Type CC24:ListBoxSideMenuItem}" BasedOn="{StaticResource lbSideMenuItem}"/>
+
 </ResourceDictionary>

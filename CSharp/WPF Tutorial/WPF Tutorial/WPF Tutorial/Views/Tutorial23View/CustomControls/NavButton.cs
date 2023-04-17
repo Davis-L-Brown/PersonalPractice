@@ -76,7 +76,7 @@ namespace WPF_Tutorial.Views.Tutorial23View.CustomControls
         }
 
         public static readonly DependencyProperty NavUriProperty =
-            DependencyProperty.Register("NavUri", typeof(Uri), typeof(NavButton), new PropertyMetadata(null));
+            DependencyProperty.Register("lbNavUri", typeof(Uri), typeof(NavButton), new PropertyMetadata(null));
 
 
 

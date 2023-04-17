@@ -5,9 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_Tutorial.Forms"
         xmlns:CC="clr-namespace:WPF_Tutorial.Views.Tutorial23View.CustomControls"
+        xmlns:PAGES="clr-namespace:WPF_Tutorial.Views.Tutorial23View.Pages"
         mc:Ignorable="d"
         Title="Tutorial23" Height="450" Width="800">
     <Grid>
-        <Frame Source="/Views/Tutorial23View/Pages/LandingPage.xaml" NavigationUIVisibility="Hidden"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="8*"/>
+        </Grid.RowDefinitions>
+
+        <WrapPanel Grid.Row="0"
+                   Orientation="Horizontal" 
+                   Background="Gray">
+            <CC:NavButton x:Name="Account" 
+                          Text="Account"
+                          Background="LightGray"
+                          NavUri="/Views/Tutorial23View/Pages/Accounts.xaml"/>
+            <CC:NavButton x:Name="ASDF"
+                          Text="ASDF"
+                          Background="LightBlue" NavUri="/Views/Tutorial23View/Pages/ASDF.xaml"/>
+        </WrapPanel>
+
+        <Frame Grid.Row="1" Source="{Binding OpenPage, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"  NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

@@ -10,14 +10,9 @@
       Title="LandingPage">
 
     <Grid>
-        <WrapPanel Margin="5" ButtonBase.Click="Grid_Click">
-            <!-- Issue with the image source, not loading full file path.-->
-            <!-- loads file path: ///Desktop/Codiene/images/-->
-            <!-- instead of path: ///Desktop/Codine/C#/WPF Tutorial/images/-->
-            <CC:NavButton Text="Accounts" 
-                          NavUri="/Views/Tutorial23View/Pages/Accounts.xaml"/>
-            <CC:NavButton Text="Non-ExistentPage"/>
-
-        </WrapPanel>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
+                   Text="Landing Page" 
+                   Background="LightGreen"
+                   Foreground="Gray"/>
     </Grid>
 </Page>

@@ -45,7 +45,7 @@ namespace WPF_Tutorial.Views.Tutorial23View.CustomControls
     ///     <MyNamespace:NavButton/>
     ///
     /// </summary>
-    public class NavButton : ButtonBase
+    public class NavButton : Button
     {
         
         

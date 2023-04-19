@@ -8,8 +8,8 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="10*"/>
-            <RowDefinition Height="90*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="80*"/>
         </Grid.RowDefinitions>
         <Menu>
             <MenuItem Header="_Tutorial 3" Click="miTutorial3_Click"></MenuItem>
@@ -34,6 +34,7 @@
             <MenuItem Header="_Tutorial 22" Click="miTutorial22_Click"></MenuItem>
             <MenuItem Header="_Tutorial 23" Click="miTutorial23_Click"></MenuItem>
             <MenuItem Header="_Tutorial 24" Click="miTutorial24_Click"></MenuItem>
+            <MenuItem Header="_Tutorial 24v2" Click="miTutorial24v2_Click"></MenuItem>
         </Menu>
         <TextBlock Grid.Row="1" Text="3: Hello World" Margin="0,10,0,0"></TextBlock>
         <TextBlock Grid.Row="1" Text="4: Code Behind Tutorial" Margin="0,20,0,0"/>
@@ -57,5 +58,6 @@
         <TextBlock Grid.Row="1" Text="22: Dark and Light Modes" Margin="0,200,0,0"/>
         <TextBlock Grid.Row="1" Text="23: Frame and Page Navigation" Margin="0,210,0,0"/>
         <TextBlock Grid.Row="1" Text="24: SideBarNav" Margin="0,220,0,0"/>
+        <TextBlock Grid.Row="1" Text="24 version 2: Experimenting with Sidebar nav" Margin="0,230,0,0"/>
     </Grid>
 </Window>

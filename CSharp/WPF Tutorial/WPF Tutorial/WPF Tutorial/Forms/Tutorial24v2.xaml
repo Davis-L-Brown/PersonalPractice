@@ -1,0 +1,53 @@
+﻿<Window x:Class="WPF_Tutorial.Forms.Tutorial24v2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Tutorial.Forms"
+        xmlns:UC="clr-namespace:WPF_Tutorial.Views.Tutorial24ViewV2.UserControls"
+        xmlns:CC="clr-namespace:WPF_Tutorial.Views.Tutorial24ViewV2.CustomControls"
+        mc:Ignorable="d"
+        Title="Tutorial24v2" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="8*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- menu -->
+        <UC:SideMenu x:Name="ucSideMenu" 
+                     Grid.Row="0" 
+                     Background="LightGray">
+            <CC:SideMenuItem Header="Settings"
+                             Background="Transparent"
+                             HeaderHAlignment="Center"
+                             HeaderVAlignment="Center"
+                             NavUri="/Views/Tutorial24ViewV2/Pages/LandingPage.xaml"
+                             
+                             Stretch="Uniform"/>
+            <CC:SideMenuItem Header="ABCD"
+                             Background="Transparent"
+                             HeaderHAlignment="Center"
+                             HeaderVAlignment="Center"
+                             NavUri="/Views/Tutorial24ViewV2/Pages/ABCD.xaml"
+                             
+                             Stretch="Uniform"/>
+            <CC:SideMenuItem Header="EFGH"
+                             Background="Transparent"
+                             HeaderHAlignment="Center"
+                             HeaderVAlignment="Center"
+                             NavUri="/Views/Tutorial24ViewV2/Pages/EFGH.xaml"
+                             
+                             Stretch="Uniform"/>
+        </UC:SideMenu>
+        <!-- Frame/pages -->
+        <Grid Grid.Column="1">
+            
+            <!-- issue with the order that the ucsidemenu and sidemenu items is created -->
+            <Frame Source="{Binding ElementName=ucSideMenu, Path=SelectedItem.NavUri}"
+                   NavigationUIVisibility="Hidden"/>
+
+        </Grid>
+        
+    </Grid>
+</Window>

@@ -24,7 +24,7 @@
         <Grid Grid.Column="0">
 
             <UC:SideMenuBar>
-                <CC:SideMenuItem 
+                <CC:SideMenuItem Header="about"
                                  NavUri=""
                                  Style="{StaticResource SideMenuItem}"
                                  VerticalAlignment="Center"

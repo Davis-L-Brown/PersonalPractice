@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="WPF_Tutorial.Views.Tutorial24ViewV2.UserControls.SideMenu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPF_Tutorial.Views.Tutorial24ViewV2.UserControls"
+             x:Name="SideMenuRoot"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" d:Background="White">
+    <Grid>
+        <ListBox x:Name="lbItemContainer" 
+                 ItemsSource="{Binding ElementName=SideMenuRoot, Path=SideMenuItems}"
+                 SelectionMode="Single"
+                 HorizontalAlignment="Stretch"
+                 HorizontalContentAlignment="Center"
+                 BorderThickness="0"
+                 SelectionChanged="lbItemContainer_SelectionChanged">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Vertical"/>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            
+        </ListBox>       
+    </Grid>
+</UserControl>

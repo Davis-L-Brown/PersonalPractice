@@ -3,7 +3,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:WPF_Tutorial"
     xmlns:CC23="clr-namespace:WPF_Tutorial.Views.Tutorial23View.CustomControls"
-    xmlns:CC24="clr-namespace:WPF_Tutorial.Views.Tutorial24View.CustomControls">
+    xmlns:CC24="clr-namespace:WPF_Tutorial.Views.Tutorial24View.CustomControls"
+    xmlns:CC24v2="clr-namespace:WPF_Tutorial.Views.Tutorial24ViewV2.CustomControls">
     <!-- this Generic resource dictionary defines the appearence of the custom control we created in tutorial 23-->
     <Style TargetType="{x:Type CC23:NavButton}">
         <!-- Sets Margin for all UI Elements, or the NavButton as a whole? -->
@@ -157,4 +158,41 @@
     </Style>
     <Style TargetType="{x:Type CC24:ListBoxSideMenuItem}" BasedOn="{StaticResource lbSideMenuItem}"/>
 
+    
+    <!-- CC24v2 -->
+    <ControlTemplate x:Key="SideMenuV2Template" TargetType="{x:Type CC24v2:SideMenuItem}">
+        <Grid MinHeight="50">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="6*"/>
+            </Grid.RowDefinitions>
+
+            <Rectangle Grid.Row="0" Grid.RowSpan="2"
+                       Name="rBack"
+                       Fill="{TemplateBinding Background}"
+                       RadiusX="8" RadiusY="8"/>
+            <TextBlock Grid.Row="0" 
+                       Name="tbText"
+                       Text="{TemplateBinding Header}"
+                       Background="Transparent"
+                       HorizontalAlignment="{TemplateBinding HeaderHAlignment}"
+                       VerticalAlignment="{TemplateBinding HeaderVAlignment}"/>
+            <Image Grid.Row="1" 
+                   Name="iLogo"
+                   Stretch="{TemplateBinding Stretch}" 
+                   Source="{TemplateBinding Image}"
+                   Margin="5"/>
+        </Grid>
+
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Fill" TargetName="rBack" Value="DarkGray"/>
+                <Setter Property="Cursor" Value="Hand"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <Style x:Key="SidMenuItemV2" TargetType="{x:Type CC24v2:SideMenuItem}">
+        <Setter Property="Template" Value="{StaticResource SideMenuV2Template}"/>
+    </Style>
+    <Style TargetType="{x:Type CC24v2:SideMenuItem}" BasedOn="{StaticResource SidMenuItemV2}"/>
 </ResourceDictionary>

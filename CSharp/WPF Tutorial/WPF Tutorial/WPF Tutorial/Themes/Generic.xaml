@@ -189,6 +189,9 @@
                 <Setter Property="Fill" TargetName="rBack" Value="DarkGray"/>
                 <Setter Property="Cursor" Value="Hand"/>
             </Trigger>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="Fill" TargetName="rBack" Value="Gray"/>
+            </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
     <Style x:Key="SidMenuItemV2" TargetType="{x:Type CC24v2:SideMenuItem}">

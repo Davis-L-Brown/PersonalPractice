@@ -76,14 +76,6 @@ namespace WPF_Tutorial.Views.Tutorial24ViewV2.UserControls
             {
                 SelectedItem = (SideMenuItem)lbItemContainer.SelectedItems[0]; 
             }
-            foreach (SideMenuItem item in lbItemContainer.Items)
-            {
-                item.Background = Brushes.Transparent;
-            }
-            if (SelectedItem != null)
-            {
-                SelectedItem.Background = Brushes.Gray;
-            }
         }
     }
 }

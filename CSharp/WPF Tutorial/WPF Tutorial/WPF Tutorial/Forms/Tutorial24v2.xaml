@@ -42,11 +42,8 @@
         </UC:SideMenu>
         <!-- Frame/pages -->
         <Grid Grid.Column="1">
-            
-            <!-- issue with the order that the ucsidemenu and sidemenu items is created -->
             <Frame Source="{Binding ElementName=ucSideMenu, Path=SelectedItem.NavUri}"
                    NavigationUIVisibility="Hidden"/>
-
         </Grid>
         
     </Grid>

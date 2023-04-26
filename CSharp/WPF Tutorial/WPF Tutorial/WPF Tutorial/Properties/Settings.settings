@@ -8,5 +8,8 @@
     <Setting Name="ColorMode" Type="System.String" Scope="User">
       <Value Profile="(Default)">LiteMode</Value>
     </Setting>
+    <Setting Name="tutorial25link" Type="System.String" Scope="User">
+      <Value Profile="(Default)">default link</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

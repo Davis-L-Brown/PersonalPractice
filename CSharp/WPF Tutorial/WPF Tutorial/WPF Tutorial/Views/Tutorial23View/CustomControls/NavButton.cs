@@ -20,7 +20,6 @@ namespace WPF_Tutorial.Views.Tutorial23View.CustomControls
 {
     public class NavButton : Button
     {
-        
 
         public ImageSource imageSource
         {

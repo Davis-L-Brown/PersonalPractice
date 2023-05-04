@@ -154,6 +154,33 @@ namespace WPF_Tutorial.Forms
             /// Add a chart for the selected data
             oWB = (Excel._Workbook)oWS.Parent;
             oChart = (Excel._Chart)oWB.Charts.Add(Missing.Value, Missing.Value, Missing.Value, Missing.Value);
+
+            /// Use the ChartWizard to create a new chart from the selected data.
+            oResizeRange = oWS.get_Range("E2:E6", Missing.Value).get_Resize(
+            Missing.Value, iNumQtrs);
+            oChart.ChartWizard(oResizeRange, Excel.XlChartType.xl3DColumn, Missing.Value,
+            Excel.XlRowCol.xlColumns, Missing.Value, Missing.Value, Missing.Value,
+            Missing.Value, Missing.Value, Missing.Value, Missing.Value);
+            oSeries = (Excel.Series)oChart.SeriesCollection(1);
+            oSeries.XValues = oWS.get_Range("A2", "A6");
+            for (int iRet = 1; iRet <= iNumQtrs; iRet++)
+            {
+                oSeries = (Excel.Series)oChart.SeriesCollection(iRet);
+                String seriesName;
+                seriesName = "=\"Q";
+                seriesName = String.Concat(seriesName, iRet);
+                seriesName = String.Concat(seriesName, "\"");
+                oSeries.Name = seriesName;
+            }
+
+            oChart.Location(Excel.XlChartLocation.xlLocationAsObject, oWS.Name);
+
+            /// Move the chart so as not to cover your data.
+            oResizeRange = (Excel.Range)oWS.Rows.get_Item(10, Missing.Value);
+            oWS.Shapes.Item("Chart 1").Top = (float)(double)oResizeRange.Top;
+            oResizeRange = (Excel.Range)oWS.Columns.get_Item(2, Missing.Value);
+            oWS.Shapes.Item("Chart 1").Left = (float)(double)oResizeRange.Left;
         }
+    
     }
 }

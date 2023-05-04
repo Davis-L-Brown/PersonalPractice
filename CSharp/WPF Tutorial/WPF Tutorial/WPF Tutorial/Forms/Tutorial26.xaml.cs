@@ -128,6 +128,32 @@ namespace WPF_Tutorial.Forms
             /// starting at E1, fill headers for the numbers of columns selected
             oResizeRange = oWS.get_Range("E1", "E1").get_Resize(Missing.Value, iNumQtrs);
             oResizeRange.Formula = "=\"Q\" & COLUMN()-4 & CHAR(10) & \"Sales\"";
+
+            /// change the orientation and wrap text properties for the headers
+            oResizeRange.Orientation = 38;
+            oResizeRange.WrapText = true;
+
+            /// Fill the interior color of the headers
+            oResizeRange.Interior.ColorIndex = 36;
+
+            /// fill the columns with a formula and apply a number format
+            oResizeRange = oWS.get_Range("E2", "E6").get_Resize(Missing.Value, iNumQtrs);
+            oResizeRange.Formula = "=RAND()*100";
+            oResizeRange.NumberFormat = "$0.00";
+
+            /// Apply borders to the sales data and headers
+            oResizeRange = oWS.get_Range("E1", "E6").get_Resize(Missing.Value, iNumQtrs);
+            oResizeRange.Borders.Weight = Excel.XlBorderWeight.xlThin;
+
+            /// Add a Totals formula for the sales data and apply a border.
+            oResizeRange = oWS.get_Range("E8", "E8").get_Resize(Missing.Value, iNumQtrs);
+            oResizeRange.Formula = "=SUM(E2:E6)";
+            oResizeRange.Borders.get_Item(Excel.XlBordersIndex.xlEdgeBottom).LineStyle = Excel.XlLineStyle.xlDouble;
+            oResizeRange.Borders.get_Item(Excel.XlBordersIndex.xlEdgeBottom).Weight = Excel.XlBorderWeight.xlThick;
+
+            /// Add a chart for the selected data
+            oWB = (Excel._Workbook)oWS.Parent;
+            oChart = (Excel._Chart)oWB.Charts.Add(Missing.Value, Missing.Value, Missing.Value, Missing.Value);
         }
     }
 }

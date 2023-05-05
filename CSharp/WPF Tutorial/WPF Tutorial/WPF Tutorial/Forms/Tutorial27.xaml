@@ -24,19 +24,22 @@
                          TextAlignment="Center"
                          BorderBrush="Black" 
                          Margin="22,45,134,216"
-                         TextChanged="tbFName_TextChanged"/>
+                         GotKeyboardFocus="tbGotKeyboardFocus"
+                         LostKeyboardFocus="tbLostKeyBoardFocus"/>
                 <TextBox Name="tbLName"
                          Text="{Binding lastName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
                          TextAlignment="Center"
                          BorderBrush="Black" 
                          Margin="136,45,21,216"
-                         TextChanged="tbLName_TextChanged"/>
+                         GotKeyboardFocus="tbGotKeyboardFocus"
+                         LostKeyboardFocus="tbLostKeyBoardFocus"/>
                 <TextBox Name="tbEmail"
                          Text="{Binding email, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
                          TextAlignment="Center"
                          BorderBrush="Black" 
                          Margin="20,100,21,163"
-                         TextChanged="tbEmail_TextChanged"/>
+                         GotKeyboardFocus="tbGotKeyboardFocus"
+                         LostKeyboardFocus="tbLostKeyBoardFocus"/>
 
             </Grid>
 

@@ -25,6 +25,8 @@ namespace WPF_Tutorial.Forms
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
+        private string MessageHolder = string.Empty;
+
         public string firstName
         {
             get { return (string)GetValue(firstNameProperty); }
@@ -106,19 +108,23 @@ namespace WPF_Tutorial.Forms
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
         
-        private void tbFName_TextChanged(object sender, TextChangedEventArgs e)
+        private void tbGotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
         {
+            if (sender.GetType() == typeof(TextBox)) 
+            {
+                TextBox tb = (TextBox)sender;
+                MessageHolder = tb.Text;
+                tb.Text = "";
+            }
 
         }
 
-        private void tbLName_TextChanged(object sender, TextChangedEventArgs e)
+        private void tbLostKeyBoardFocus(object sender, KeyboardFocusChangedEventArgs e)
         {
-
-        }
-
-        private void tbEmail_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
+            if (sender.GetType() == typeof(TextBox) & String.IsNullOrEmpty(((TextBox)sender).Text))
+            {
+                ((TextBox)sender).Text = MessageHolder;
+            }
         }
 
         private void btnCreateUser_Click(object sender, RoutedEventArgs e)
@@ -153,6 +159,7 @@ namespace WPF_Tutorial.Forms
         {
 
         }
+
 
     }
 

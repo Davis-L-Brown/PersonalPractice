@@ -87,6 +87,11 @@ namespace WPF_Tutorial.Forms
 
                 /// Manipulate a variable number of columns for quarterly sales data
                 DisplayQuarterlySales(oSheet);
+
+                /// Make sure Excel is visible and give the user control 
+                /// of Microsoft Excel's lifetime
+                oXL.Visible = true;
+                oXL.UserControl = true;
             }
             catch(Exception ex) 
             {

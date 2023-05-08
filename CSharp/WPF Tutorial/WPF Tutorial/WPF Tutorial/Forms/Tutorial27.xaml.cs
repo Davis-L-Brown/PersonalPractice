@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace WPF_Tutorial.Forms
 {
@@ -71,11 +74,11 @@ namespace WPF_Tutorial.Forms
 
         public Dictionary<string, Customer> dCustomers
         {
-            get { return (Dictionary<string, Customer>)GetValue(customersProperty); }
-            set { SetValue(customersProperty, value); }
+            get { return (Dictionary<string, Customer>)GetValue(dcustomersProperty); }
+            set { SetValue(dcustomersProperty, value); }
         }
 
-        public static readonly DependencyProperty customersProperty =
+        public static readonly DependencyProperty dcustomersProperty =
             DependencyProperty.Register(
                 nameof(dCustomers), 
                 typeof(Dictionary<string, Customer>), 
@@ -98,7 +101,7 @@ namespace WPF_Tutorial.Forms
         public Tutorial27()
         {
             DataContext = this;
-            SetCurrentValue(customersProperty, new Dictionary<string, Customer>());
+            SetCurrentValue(dcustomersProperty, new Dictionary<string, Customer>());
             SetCurrentValue(ocCustomersProperty, new ObservableCollection<Customer>());
             InitializeComponent();
         }
@@ -157,7 +160,31 @@ namespace WPF_Tutorial.Forms
 
         private void btnExport_Click(object sender, RoutedEventArgs e)
         {
+            Excel.Application oXL;
+            Excel._Workbook oWB;
+            Excel._Worksheet oWS;
+            Excel.Range oR;
 
+            oXL = new Excel.Application();
+            oXL.Visible = true;
+
+            oWB = (Excel._Workbook)(oXL.Workbooks.Add(Missing.Value));
+            oWS = (Excel._Worksheet)oWB.ActiveSheet;
+
+            oWS.Cells[1, 1] = "First Name";
+            oWS.Cells[1, 2] = "Last Name";
+            oWS.Cells[1, 3] = "Email";
+
+            string[,] saNames = new string[ocCustomers.Count, 3];
+            for (int i=0; i < ocCustomers.Count; i++)
+            {
+                Customer custy = ocCustomers[i];
+                saNames[i, 0] = custy.FName;
+                saNames[i, 1] = custy.LName;
+                saNames[i, 2] = custy.Email;
+            }
+
+            oWS.get_Range("A2", $"C{ocCustomers.Count + 1}").Value = saNames;
         }
 
 

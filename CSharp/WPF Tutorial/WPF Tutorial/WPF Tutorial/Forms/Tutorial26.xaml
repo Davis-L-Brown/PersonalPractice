@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="Creating CSV and Excel Files" Height="450" Width="800">
     <Grid>
-        
+        <Button Content="Button" HorizontalAlignment="Left" Height="31" Margin="292,353,0,0" VerticalAlignment="Top" Width="89" Click="Button_Click"/>
+
     </Grid>
 </Window>

@@ -59,3 +59,6 @@ Tutorial 24 Custom About Window with nav bar and pages
 	- help from:
 		1. https://www.youtube.com/watch?v=T4U9ce8J93Q
 		2. 
+
+Tutorial 26 Exporting to Excell 
+	- https://learn.microsoft.com/en-us/previous-versions/office/troubleshoot/office-developer/automate-excel-from-visual-c

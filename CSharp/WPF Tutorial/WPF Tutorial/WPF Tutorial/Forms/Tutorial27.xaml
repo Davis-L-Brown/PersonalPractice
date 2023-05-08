@@ -1,0 +1,81 @@
+﻿<Window x:Class="WPF_Tutorial.Forms.Tutorial27"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Tutorial.Forms"
+        mc:Ignorable="d"
+        Title="Custom Excel, Custom Types" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="7*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="7*"/>
+                <RowDefinition Height="3*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <TextBox Name="tbFName"
+                         Text="{Binding firstName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                         TextAlignment="Center"
+                         BorderBrush="Black" 
+                         Margin="22,45,134,216"
+                         GotKeyboardFocus="tbGotKeyboardFocus"
+                         LostKeyboardFocus="tbLostKeyBoardFocus"/>
+                <TextBox Name="tbLName"
+                         Text="{Binding lastName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                         TextAlignment="Center"
+                         BorderBrush="Black" 
+                         Margin="136,45,21,216"
+                         GotKeyboardFocus="tbGotKeyboardFocus"
+                         LostKeyboardFocus="tbLostKeyBoardFocus"/>
+                <TextBox Name="tbEmail"
+                         Text="{Binding email, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                         TextAlignment="Center"
+                         BorderBrush="Black" 
+                         Margin="20,100,21,163"
+                         GotKeyboardFocus="tbGotKeyboardFocus"
+                         LostKeyboardFocus="tbLostKeyBoardFocus"/>
+
+            </Grid>
+
+            <Button Grid.Row="1"
+                Content="Create User"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Padding="10"
+                Margin="10" Click="btnCreateUser_Click"/>
+        </Grid>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="8*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+
+            <DataGrid Name="dgCustomers"
+                      IsReadOnly="True"
+                      Margin="30"
+                      AutoGenerateColumns="False"
+                      ItemsSource="{Binding Path=ocCustomers, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="First Name" Binding="{Binding FName}" Width="25*"/>
+                    <DataGridTextColumn Header="Last Name"  Binding="{Binding LName}" Width="25*"/>
+                    <DataGridTextColumn Header="Email"      Binding="{Binding Email}" Width="50*"/>
+                </DataGrid.Columns>
+
+            </DataGrid>
+
+            <Button Name="btnExport" 
+                    Grid.Row="1"
+                    Content="Export"
+                    HorizontalAlignment="Center" VerticalAlignment="Center"
+                    Padding="10" Margin="10" Click="btnExport_Click"/>
+        </Grid>
+
+    </Grid>
+</Window>

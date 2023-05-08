@@ -37,6 +37,7 @@
             <MenuItem Header="_Tutorial 24v2" Click="miTutorial24v2_Click"></MenuItem>
             <MenuItem Header="_Tutorial 25" Click="miTutorial25_Click"></MenuItem>
             <MenuItem Header="_Tutorial 26" Click="miTutorial26_Click"></MenuItem>
+            <MenuItem Header="_Tutorial 27" Click="miTutorial27_Click"></MenuItem>
         </Menu>
         <TextBlock Grid.Row="1" Text="3: Hello World" Margin="0,10,0,0"></TextBlock>
         <TextBlock Grid.Row="1" Text="4: Code Behind Tutorial" Margin="0,20,0,0"/>
@@ -63,5 +64,6 @@
         <TextBlock Grid.Row="1" Text="24 version 2: Experimenting with Sidebar nav" Margin="0,230,0,0"/>
         <TextBlock Grid.Row="1" Text="25: Selecting and saving a FilePath to user settings" Margin="0,240,0,0"/>
         <TextBlock Grid.Row="1" Text="26: Exporting to CSVs and Excell" Margin="0,250,0,0"/>
+        <TextBlock Grid.Row="1" Text="27: Creating a customized Excel sheet" Margin="0,260,0,0"/>
     </Grid>
 </Window>

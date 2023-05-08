@@ -29,7 +29,9 @@ namespace WPF_Tutorial.Forms
             ///MessageBox has a lot of overloads
             ///MessageBox.Show("Could not open file", "Error!", MessageBoxButton.OK, MessageBoxImage.Error);
             ///the message box button gives greater functionality to the return of the message box
-            MessageBoxResult result = MessageBox.Show("Could not open file", "Error!", MessageBoxButton.YesNo, MessageBoxImage.Error);
+            MessageBoxResult result = MessageBox.Show("Could not open file", "Error!", 
+                MessageBoxButton.YesNo, 
+                MessageBoxImage.Error);
 
             if (result == MessageBoxResult.Yes)
             {

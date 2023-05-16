@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace WPF_Tutorial.Forms
 {
@@ -157,9 +160,20 @@ namespace WPF_Tutorial.Forms
 
         private void btnExport_Click(object sender, RoutedEventArgs e)
         {
+            Excel.Application oXL;
+            Excel._Workbook oWB;
+            Excel._Worksheet oWS;
+            Excel.Range oR;
+            try
+            {
+                oXL = new Excel.Application();
+                oXL.Visible = true;
 
+                oWB = (Excel.Workbook)(oXL.Workbooks.Add(Missing.Value));
+                
+            }
+            catch(Exception ex) { }
         }
-
 
     }
 

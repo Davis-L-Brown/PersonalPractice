@@ -44,11 +44,11 @@ li {
     --bg: var(--grey);
     --fontcolor: var(--black);
     --btnBg: var(--black);
-    --btnFontColor: var(--white);
+    --btnFontColor: var(--grey);
 }
 .dark-theme {
     --bg: var(--black);
     --fontcolor: var(--grey);
-    --btnBg: var(--white);
+    --btnBg: var(--grey);
     --btnFontColor: var(--black);
 }
